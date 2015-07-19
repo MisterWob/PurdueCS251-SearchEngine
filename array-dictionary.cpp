@@ -67,7 +67,12 @@ DataType
 ArrayDictionary::findRecord( KeyType key)
 {
         // add your code here
-
+	for(int i = 0; i < currentNumber; i++) {
+		if(strcmp(array[i].key,key) == 0) {
+			return (DataType)array[i].data;
+		}
+	}
+	
 	return NULL;
 }
 
@@ -76,6 +81,7 @@ bool
 ArrayDictionary::removeElement(KeyType key)
 {
         // Add your code here
+        
 
 	return true;
 	
