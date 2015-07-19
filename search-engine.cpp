@@ -53,7 +53,7 @@ SearchEngine::SearchEngine( int port, DictionaryType dictionaryType):
 		char * desc = (char*) malloc(500);
 		t = strtok(local_buffer, "\n");
 		desc = strdup(t);
-		
+		printf("hello\n");
 		records[i]->_url = strdup(url);
 		records[i]->_description = strdup(desc);
 		
