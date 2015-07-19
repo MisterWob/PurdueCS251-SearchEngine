@@ -32,7 +32,22 @@ ArrayDictionary::addRecord( KeyType key, DataType record)
 	}
 	
 	
-	
+	if(maxNumber == currentNumber) {
+		int oldSize = maxNumber;
+		maxNumber *= 2;
+		
+		ArrayDictionaryNode *newArray = new ArrayDictionaryNode[maxNumber];
+		
+		for(int j = 0; j < oldSize; j++) {
+		
+			newArray[j].key = (char*)malloc(sizeof(char)*100);
+			
+			strcpy(newArray[j].key, array[j].key);
+			
+			newArray[j].data = new DataType;
+			newArray[j].data = (DataType*)array[j].data;
+		}
+	}
 	return true;
 }
 
