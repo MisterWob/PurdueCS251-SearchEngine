@@ -18,7 +18,6 @@ BinarySearchDictionary::addRecord( KeyType key, DataType record) {
 	sorted = false;
 	return ArrayDictionary::addRecord(key, record);
 }
-
 // Find a key in the dictionary and return corresponding record or NULL
 DataType
 BinarySearchDictionary::findRecord( KeyType key)
@@ -31,6 +30,33 @@ BinarySearchDictionary::findRecord( KeyType key)
 	// Use binary search
 
 	// Add your implementation here
+	if(!sorted) {
+      //heapSort();   // Call heap sort here
+      sort();
+        sorted = true;
+    }
+   
+    int low = 0;
+    int high = currentNumber - 1;
+   
+    while(high >= low) {
+    
+        int mid = (low+high)/2;
+        int result = strcmp(key, array[mid].key);
+        
+        if(result == 0) {
+            // Found item
+            return (DataType)array[mid].data;
+        }
+        else if(result < 0) {
+            
+            high = mid-1;
+        }
+        else { 
+            
+            low = mid+1;
+        }
+    }
 
 	return NULL;
 }
@@ -51,6 +77,19 @@ BinarySearchDictionary::sort()
 	//for (int i = 0; i < currentNumber; i++) {
 	//	printf("%s\n", array[i].key);
 	//}
+	ArrayDictionaryNode temp;
+	for(int i = 0; i < currentNumber - 1; i++) {
+		for(int j = i + 1; j < currentNumber; j++) {
+			temp.key = (char *) malloc(100);
+			temp.data = new DataType;
+			temp.key = strdup(array[i].key);
+			temp.data = (DataType*)array[i].data;
+			array[i].data = (DataType*) array[j].data;
+			array[i].key = strdup(array[j].key);
+			array[j].data = (DataType*)temp.data;
+			array[j].key = strdup(temp.key);
+		}
+	}
 }
 
 
