@@ -20,7 +20,7 @@ SearchEngine::SearchEngine( int port, DictionaryType dictionaryType):
   // Populate dictionary and sort it if necessary
   
   
-  char * local_buffer = (char*) malloc(50000);
+  char * local_buffer = (char*) malloc(5000);
   strcpy(local_buffer, "");
   int maxURLs = 1001;
   URLRecord ** records = new URLRecord*[maxURLs];
@@ -35,20 +35,31 @@ SearchEngine::SearchEngine( int port, DictionaryType dictionaryType):
   int i = 0;
   int ncounter = 0;
   
-	/*while((c = fgetc(file)) != EOF) {
-	    
-	    if(c != '\n') {
-	        local_buffer[i++] = c;
-	    }
-	    else {
-	        if(i > 0) {
-				word;
-				n++;
-			}
-	   }
-	}*/
-	
-	//while(fgets())
+  while(fgets(local_buffer,500, file)) {
+  	if(strcmp(local_buffer, "\n") != 0) {
+  		
+  		char * t = (char*)malloc(500);
+  		t = strtok(local_buffer, " \n");
+  		
+  		char * lb = local_buffer;
+		int index = lb[0] - '0';
+		lb += 2;
+		
+		char * url;
+		url = strdup(lb);
+		
+		fgets(local_buffer, 500, file);
+		
+		char * desc = (char*) malloc(500);
+		t = strtok(local_buffer, "\n");
+		desc = strdup(t);
+		
+		records[i]->_url = strdup(url);
+		records[i]->_description = strdup(desc);
+		
+  	}
+  }
+
 	
 	
 	
