@@ -85,18 +85,21 @@ ArrayDictionary::removeElement(KeyType key)
         
         ArrayDictionaryNode *newArray = new ArrayDictionaryNode[maxNumber];
         int j = 0;
+        
         for(int i = 0; i <  currentNumber; i++) {
-        	if(strcmp(array[j].key,key) != 0) {
-        	
-        		newArray[i].key = (char*)malloc(100);
-				newArray[i].data = new DataType;
+        	if(strcmp(array[i].key,key) == 0) {
+				continue;
+				
+				newArray[j].key = (char*)malloc(100);
+				newArray[j].data = new DataType;
 	
-				newArray[i].key = strdup(array[i].key);
-				newArray[i].data = (DataType*)array[i].data;	
+				newArray[j].key = strdup(array[i].key);
+				newArray[j].data = (DataType*)array[j].data;
 				j++;
         	}
-        	j++;
         }
+        currentNumber--;
+        
         delete[] array;
         array = newArray;
 	return true;
