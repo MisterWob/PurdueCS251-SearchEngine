@@ -112,5 +112,11 @@ KeyType *
 ArrayDictionary::keys(int * n)
 {
         // Add yoru code here
-	return NULL;
+        KeyType * data = new KeyType[currentNumber];
+        for(int i = 0; i < currentNumber; i++) {
+        	data[i] = (char*) malloc(100);
+        	strcpy((char*)data[i], array[i].key);
+        }
+        *n = currentNumber;
+	return data;
 }
