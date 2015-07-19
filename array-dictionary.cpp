@@ -11,6 +11,10 @@
 ArrayDictionary::ArrayDictionary()
 {
   // Add your code here
+  maxNumber = 500;
+  currentNumber = 0;
+  
+  array = new ArrayDictionaryNode[maxNumber];
 }
 
 // Add a record to the dictionary. Returns false if key already exists
@@ -18,6 +22,16 @@ bool
 ArrayDictionary::addRecord( KeyType key, DataType record)
 {
         // Add your code here
+        	
+	for (int i = 0; i < currentNumber; i++) {
+		if (strcmp(array[i].key, key) == 0)
+		{
+			array[i].data = (DataType*)record;
+			return false;
+		}
+	}
+	
+	
 	
 	return true;
 }
