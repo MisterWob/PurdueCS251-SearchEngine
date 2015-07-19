@@ -87,7 +87,7 @@ ArrayDictionary::removeElement(KeyType key)
         int j = 0;
         
         for(int i = 0; i <  currentNumber; i++) {
-        	if(strcmp(array[i].key,key) == 0) {
+        	if(strcmp(array[i].key,key) == 0) 
 				continue;
 				
 				newArray[j].key = (char*)malloc(100);
@@ -96,7 +96,7 @@ ArrayDictionary::removeElement(KeyType key)
 				newArray[j].key = strdup(array[i].key);
 				newArray[j].data = (DataType*)array[j].data;
 				j++;
-        	}
+        	
         }
         currentNumber--;
         
