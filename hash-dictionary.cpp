@@ -29,7 +29,25 @@ bool
 HashDictionary::addRecord( KeyType key, DataType record)
 {
   // Add your code here
+  int h = hash(key);
+  HashNode * e = buckets[h];
   
+  while (e!=NULL) {
+		if (!strcmp(e-> key, key)) {
+			
+			e->data = record;
+			return true;
+		}
+		e = e->next;
+ }
+	
+	e = new HashNode;
+	e->key = strdup(key);
+	e->data = record;
+	e->next = buckets[h];
+	buckets[h] = e;
+	
+
   return false;
 }
 
