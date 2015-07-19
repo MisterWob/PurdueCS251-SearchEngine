@@ -36,7 +36,7 @@ HashDictionary::addRecord( KeyType key, DataType record)
 		if (!strcmp(e-> key, key)) {
 			
 			e->data = record;
-			return true;
+			return false;
 		}
 		e = e->next;
  }
@@ -48,7 +48,7 @@ HashDictionary::addRecord( KeyType key, DataType record)
 	buckets[h] = e;
 	
 
-  return false;
+  return true;
 }
 
 // Find a key in the dictionary and return corresponding record or NULL
