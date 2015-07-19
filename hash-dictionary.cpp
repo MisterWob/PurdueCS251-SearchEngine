@@ -9,6 +9,8 @@
 HashDictionary::HashDictionary()
 {
   // Add your code here
+   //buckets = (HashNode**) malloc(MaxBuckets * sizeof(HashNode*));
+  for(int i = 0; i < MaxBuckets; i++) buckets[i] = NULL;
 }
 
 int
@@ -27,6 +29,7 @@ bool
 HashDictionary::addRecord( KeyType key, DataType record)
 {
   // Add your code here
+  
   return false;
 }
 
