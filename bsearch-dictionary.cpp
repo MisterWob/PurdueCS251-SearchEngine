@@ -26,16 +26,7 @@ BinarySearchDictionary::findRecord( KeyType key)
 		sort();
 		sorted = true;
 	}
-	
-	// Use binary search
-
-	// Add your implementation here
-	if(!sorted) {
-      //heapSort();   // Call heap sort here
-      sort();
-        sorted = true;
-    }
-   
+	   
     int low = 0;
     int high = currentNumber - 1;
    
@@ -45,7 +36,7 @@ BinarySearchDictionary::findRecord( KeyType key)
         int result = strcmp(key, array[mid].key);
         
         if(result == 0) {
-            // Found item
+            
             return (DataType)array[mid].data;
         }
         else if(result < 0) {
@@ -80,6 +71,8 @@ BinarySearchDictionary::sort()
 	ArrayDictionaryNode temp;
 	for(int i = 0; i < currentNumber - 1; i++) {
 		for(int j = i + 1; j < currentNumber; j++) {
+			
+			if(strcmp(array[i].key,array[j].key) > 0) {
 			temp.key = (char *) malloc(100);
 			temp.data = new DataType;
 			temp.key = strdup(array[i].key);
@@ -89,6 +82,8 @@ BinarySearchDictionary::sort()
 			array[j].data = (DataType*)temp.data;
 			array[j].key = strdup(temp.key);
 		}
+	}
+	
 	}
 }
 
