@@ -11,6 +11,7 @@ HashDictionary::HashDictionary()
   // Add your code here
    //buckets = (HashNode**) malloc(MaxBuckets * sizeof(HashNode*));
   for(int i = 0; i < MaxBuckets; i++) buckets[i] = NULL;
+  nElements = 0;
 }
 
 int
@@ -41,6 +42,7 @@ HashDictionary::addRecord( KeyType key, DataType record)
 		e = e->next;
  }
 	
+	nElements++;
 	e = new HashNode;
 	e->key = strdup(key);
 	e->data = record;
