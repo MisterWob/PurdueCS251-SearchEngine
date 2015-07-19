@@ -47,7 +47,18 @@ ArrayDictionary::addRecord( KeyType key, DataType record)
 			newArray[j].data = new DataType;
 			newArray[j].data = (DataType*)array[j].data;
 		}
+		
+		delete[] array;
+		array = newArray;
 	}
+	currentNumber++;
+	
+	array[currentNumber -1].key = (char*)malloc(100);
+	array[currentNumber -1].data = new DataType;
+	
+	array[currentNumber -1].key = strdup(key);
+	array[currentNumber -1].data = (DataType*)record;
+	
 	return true;
 }
 
