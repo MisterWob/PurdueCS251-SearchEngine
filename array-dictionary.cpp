@@ -81,8 +81,24 @@ bool
 ArrayDictionary::removeElement(KeyType key)
 {
         // Add your code here
+        if(findRecord(key) == NULL) return false;
         
-
+        ArrayDictionaryNode *newArray = new ArrayDictionaryNode[maxNumber];
+        int j = 0;
+        for(int i = 0; i <  currentNumber; i++) {
+        	if(strcmp(array[j].key,key) != 0) {
+        	
+        		newArray[i].key = (char*)malloc(100);
+				newArray[i].data = new DataType;
+	
+				newArray[i].key = strdup(array[i].key);
+				newArray[i].data = (DataType*)array[i].data;	
+				j++;
+        	}
+        	j++;
+        }
+        delete[] array;
+        array = newArray;
 	return true;
 	
 }
