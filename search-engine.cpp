@@ -1,13 +1,57 @@
 
 #include <string.h>
+#include "webcrawl.h"
 #include "search-engine.h"
+#include <cstdlib>
+
+DictionaryType dt;
 
 SearchEngine::SearchEngine( int port, DictionaryType dictionaryType):
   MiniHTTPD(port)
 {
   // Create dictionary of the indicated type
-
+	if(dictionaryType == HashDictionaryType) _wordToURLList = new HashDictionary();
+	else if(dictionaryType == ArrayDictionaryType) _wordToURLList = new ArrayDictionary();
+	else if(dictionaryType == AVLDictionaryType) _wordToURLList = new AVLDictionary();
+	else if(dictionaryType == BinarySearchDictionaryType) _wordToURLList = new BinarySearchDictionary();
+	else _wordToURLList = NULL;
+	
+	dt = dictionaryType;
   // Populate dictionary and sort it if necessary
+  
+  
+  char * local_buffer = (char*) malloc(50000);
+  strcpy(local_buffer, "");
+  int maxURLs = 1001;
+  URLRecord ** records = new URLRecord*[maxURLs];
+  
+  for(int i = 0; i < maxURLs; i++) {
+  	records[i] = new URLRecord();
+  }
+  
+  FILE *file = fopen("url.txt", "r");
+  
+  int c;
+  int i = 0;
+  int ncounter = 0;
+  
+	/*while((c = fgetc(file)) != EOF) {
+	    
+	    if(c != '\n') {
+	        local_buffer[i++] = c;
+	    }
+	    else {
+	        if(i > 0) {
+				word;
+				n++;
+			}
+	   }
+	}*/
+	
+	//while(fgets())
+	
+	
+	
 }
 
 void
