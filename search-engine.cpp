@@ -76,7 +76,7 @@ SearchEngine::SearchEngine( int port, DictionaryType dictionaryType):
 	
 		records[i]->_url = strdup(url);
 		records[i]->_description = strdup(desc);
-		printf("%d url:%s\n desc:%s\n\n", index, records[i]->_url, records[i]->_description);
+		printf("%d url:%s\ndesc:%s\n\n", index, records[i]->_url, records[i]->_description);
 		
   	}
   }
