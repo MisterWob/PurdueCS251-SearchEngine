@@ -63,7 +63,7 @@ SearchEngine::SearchEngine( int port, DictionaryType dictionaryType):
 		char * url;
 		url = strdup(lb);
 		
-		printf("%s url:%s", i_string, url);
+		//printf("%s url:%s", i_string, url);
 		/*fgets(local_buffer, 500, file);
 		
 		char * desc = (char*) malloc(500);
