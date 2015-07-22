@@ -59,7 +59,7 @@ SearchEngine::SearchEngine( int port, DictionaryType dictionaryType):
 			is++; lb++;
 		}
 		*is = '\0';
-		lb++;
+		lb++; //removes whitespace
 		index = atoi(i_string);
 		
 		//Getting URL
@@ -67,7 +67,7 @@ SearchEngine::SearchEngine( int port, DictionaryType dictionaryType):
 		char * url = strtok(lb, "\n");
 		url = strdup(url);
 		
-		//printf("%s url:%s", i_string, url);
+		//Getting Description
 		fgets(local_buffer, 500, file);
 		
 		char * desc = (char*) malloc(500);
@@ -76,7 +76,7 @@ SearchEngine::SearchEngine( int port, DictionaryType dictionaryType):
 	
 		records[i]->_url = strdup(url);
 		records[i]->_description = strdup(desc);
-		printf("%d url:%s\n\n", index, records[i]->_url, records[i]->_description);
+		printf("%d url:%s\n desc:%s\n\n", index, records[i]->_url, records[i]->_description);
 		
   	}
   }
