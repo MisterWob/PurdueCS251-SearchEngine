@@ -167,7 +167,7 @@ SearchEngine::dispatch( FILE * fout, const char * documentRequested)
   if (strcmp(documentRequested, "/")==0) {
     // Send initial form
     fprintf(fout, "<TITLE>CS251 Search</TITLE>\r\n");
-    fprintf(fout, "<CENTER><H1><em>Boiler Search</em></H1>\n");
+    fprintf(fout, "<CENTER><H1><em><font color=\"green\">Boiler</font> <CENTER><H1><em><font color=\"blue\">Search</font></em></H1>\n");
     fprintf(fout, "<H2>\n");
     fprintf(fout, "<FORM ACTION=\"search\">\n");
     fprintf(fout, "Search: \nmax search terms = 500\n");
@@ -187,6 +187,8 @@ SearchEngine::dispatch( FILE * fout, const char * documentRequested)
 
   // Here the URLs printed are hardwired
 	
+	//Checking sanity of search request
+  
   if(strstr(documentRequested, "/search?word=") == NULL) {
   	return;
   }
@@ -195,6 +197,8 @@ SearchEngine::dispatch( FILE * fout, const char * documentRequested)
   }
   
   char * search = strdup(documentRequested);
+  
+  //Extracting separate words______________________________________
   
   char * word = (char*) malloc(100);
   word = search + 13;
@@ -216,6 +220,8 @@ SearchEngine::dispatch( FILE * fout, const char * documentRequested)
   
   char word_ext[50]; int i = 0;
   
+  //nextword___________________________________________
+  
   while((ch = *w) != '\0') {
   	if(ch != '+') {
 	        word_ext[i++] = ch;
@@ -233,15 +239,18 @@ SearchEngine::dispatch( FILE * fout, const char * documentRequested)
   	w++;
   }
   
+  //Getting last word out
   if(ch == '\0') {
-  			word_ext[i] = '\0';
-	        i = 0;
-			word_list[wordCount] = strdup(word_ext);
-			printf("word: %s\n", word_list[wordCount]);
-			wordCount++;
+  		word_ext[i] = '\0';
+	    i = 0;
+		word_list[wordCount] = strdup(word_ext);
+		printf("word: %s\n", word_list[wordCount]);
+		wordCount++;
   }
-  //word = strdup()
-  //extracting requests
+  //____________________________________________________
+  
+  //_________________________________________________________________
+
   
   
   const int nurls=2;
