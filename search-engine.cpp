@@ -36,6 +36,9 @@ SearchEngine::SearchEngine( int port, DictionaryType dictionaryType):
   int i = 0;
   int ncounter = 0;
   
+  
+
+  
   while(fgets(local_buffer,500, file)) {
   	if(strcmp(local_buffer, "\n") != 0) {
   		
@@ -76,13 +79,18 @@ SearchEngine::SearchEngine( int port, DictionaryType dictionaryType):
 	
 		records[i]->_url = strdup(url);
 		records[i]->_description = strdup(desc);
+		
 		//printf("%d url:%s\ndesc:%s\n\n", index, records[i]->_url, records[i]->_description);
 		
   	}
   }
 
 	free(local_buffer);
+	//free(url);
+	//free(desc);
 	fclose(file);
+	
+
 	
 	file = fopen("word.txt", "r");
 	local_buffer = (char*) malloc(500);
@@ -90,31 +98,55 @@ SearchEngine::SearchEngine( int port, DictionaryType dictionaryType):
 	while(fgets(local_buffer, 500, file)) {
 		if(strcmp(local_buffer, "\n") != '\0') {
 			
+			//Getting word
 			char * t = (char*)malloc(500);
 			t = strtok(local_buffer, " ");
-			printf("t %s\n", t);
 			char * word = (char*) malloc(100);
 			word = strdup(t);
 			
+			//Getting indices
 			char * numString = strtok(NULL, "\n");
-			printf("numString %s\n", numString);
-			char * ns = numString;
+			char * ns = strdup(numString);
 			int j = 0;
 			int ch;
-			char * index = (char*) malloc(20);
 			
-			/*while((ch = *ns) != '\0') {
+			URLRecordList * _head;
+			_head = NULL;
+			URLRecordList * _prev;
+			_prev = NULL;
+			
+			char * index_string = (char*) malloc(20);
+			
+			while((ch = *ns) != '\0') {
 				if(ch != ' ') {
-					index[j] = ch; j++;
+					index_string[j] = ch; j++;
 				}
 				else {
 					if(j > 0) {
-						index[j] = '\0';
+						index_string[j] = '\0';
 						j = 0;
 						
+						int index = atoi(index_string);
+						
+						if(records[index]->_url != NULL) {
+							URLRecordList * newNode = new URLRecordList();
+							
+							if(_head == NULL) _head = newNode;
+							
+							newNode->_urlRecord = records[index];
+							newNode->_next = NULL;
+							
+							if(_prev != NULL) {
+								_prev->_next = newNode;
+							}
+							
+							_prev = newNode;
+							
+						}
+						else continue;
 					}
 				}
-			}*/
+			}
 			
 		}
 	}
