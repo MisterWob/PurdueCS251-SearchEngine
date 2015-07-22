@@ -255,7 +255,7 @@ SearchEngine::dispatch( FILE * fout, const char * documentRequested)
   //____________________________________________________
   
   //_________________________________________________________________
-printf("cat_string %s\n", cat_string);
+//printf("cat_string %s\n", cat_string);
   
   
   const int nurls=2;
@@ -268,8 +268,7 @@ printf("cat_string %s\n", cat_string);
   };
   
   const char * description[] = {
-    "Computer Science Department. Purdue University.",
-    "CS251 Data Structures"
+
   };
 
   fprintf( stderr, "Search for words: \"%s\"\n", words);
