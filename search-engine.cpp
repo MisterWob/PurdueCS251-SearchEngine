@@ -262,16 +262,6 @@ SearchEngine::dispatch( FILE * fout, const char * documentRequested)
 
   const char * words = "data structures";
 
-  const char * urls[] = {
-    "http://www.cs.purdue.edu",
-    "http://www.cs.purdue.edu/homes/cs251"
-  };
-  
-  const char * description[] = {
-    "Computer Science Department. Purdue University.",
-    "CS251 Data Structures"
-  };
-
   fprintf( stderr, "Search for words: \"%s\"\n", words);
 
   fprintf( fout, "<TITLE>Search Results</TITLE>\r\n");
