@@ -16,13 +16,13 @@ SearchEngine::SearchEngine( int port, DictionaryType dictionaryType):
 	else if(dictionaryType == BinarySearchDictionaryType) _wordToURLList = new BinarySearchDictionary();
 	else _wordToURLList = NULL;
 	
-	printf("aa\n");
+	printf("1.\n");
 	
 	dt = dictionaryType;
   // Populate dictionary and sort it if necessary
   
   FILE *file = fopen("url.txt", "r");
-  
+  printf("2.\n");
   char * local_buffer = (char*) malloc(5000);
   strcpy(local_buffer, "");
   int maxURLs = 1001;
