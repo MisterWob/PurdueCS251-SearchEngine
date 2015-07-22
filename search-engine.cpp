@@ -26,15 +26,16 @@ SearchEngine::SearchEngine( int port, DictionaryType dictionaryType):
   char * local_buffer = (char*) malloc(5000);
 
   strcpy(local_buffer, "");
-  printf("1.\n");
+ 
   int maxURLs = 1001;
   URLRecord ** records = new URLRecord*[maxURLs];
   
   for(int i = 0; i < maxURLs; i++) {
+  
   	records[i] = new URLRecord();
   }
   
-  
+   printf("1.\n");
   
   int c;
   int i = 0;
