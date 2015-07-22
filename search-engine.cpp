@@ -42,10 +42,7 @@ SearchEngine::SearchEngine( int port, DictionaryType dictionaryType):
   int ncounter = 0;
   
   while(fgets(local_buffer,500, file)) {
-   printf("1.\n");
   	if(strcmp(local_buffer, "\n") != 0) {
-  	
-  		 printf("2.\n");
   		 
   		char * t = (char*)malloc(700);
   		t = strtok(local_buffer, " \n");
@@ -67,9 +64,11 @@ SearchEngine::SearchEngine( int port, DictionaryType dictionaryType):
 	
 		records[i]->_url = strdup(url);
 		records[i]->_description = strdup(desc);
+		
 		printf("%d url: %s\n desc: %s", index, records[i]->_url, records[i]->_description);
 		
   	}
+  	break;
   }
 
 	free(local_buffer);
