@@ -286,7 +286,7 @@ SearchEngine::dispatch( FILE * fout, const char * documentRequested)
   for(int i = 0; i < wordCount; i++) {
   	
   	URLRecordList * _record = (URLRecordList*)_wordToURLList->findRecord(word_list[i]);
-    
+    URLRecordList * _next =  _record->_next;
   	 
   	 while(_record != NULL) {
   	 	
@@ -305,7 +305,7 @@ SearchEngine::dispatch( FILE * fout, const char * documentRequested)
   	 		url_list[count1] = _record->_urlRecord;
   	 		count1++;
   	 	}
-  	 	_record = _record->_next;	
+  	 	_record = _next;	
   	 	
   	 }
   }
