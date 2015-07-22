@@ -68,7 +68,7 @@ SearchEngine::SearchEngine( int port, DictionaryType dictionaryType):
 		printf("%d url: %s\n desc: %s", index, records[i]->_url, records[i]->_description);
 		
   	}
-  	break;
+  	
   }
 
 	free(local_buffer);
