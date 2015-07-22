@@ -206,10 +206,11 @@ SearchEngine::dispatch( FILE * fout, const char * documentRequested)
   wordCount = 0;
   
   char * word = (char*) malloc(100);
-  
+  word = search + 13;
+  printf("%s",word);
   int ch;
   
-  //word = strdup(strstr())
+  //word = strdup()
   //extracting requests
   
   
