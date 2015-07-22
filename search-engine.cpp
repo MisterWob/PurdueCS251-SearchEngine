@@ -196,6 +196,10 @@ SearchEngine::dispatch( FILE * fout, const char * documentRequested)
   
   char * search = strdup(documentRequested);
   
+  char * word = (char*) malloc(100);
+  word = search + 13;
+  printf("%s\n",word);
+  
   char ** word_list = new char*[500]; 
   
   for(int i = 0; i < 500; i++) {
@@ -205,9 +209,7 @@ SearchEngine::dispatch( FILE * fout, const char * documentRequested)
   int wordCount;
   wordCount = 0;
   
-  char * word = (char*) malloc(100);
-  word = search + 13;
-  printf("%s",word);
+
   int ch;
   
   //word = strdup()
