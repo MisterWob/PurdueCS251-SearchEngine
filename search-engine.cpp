@@ -152,6 +152,7 @@ SearchEngine::SearchEngine( int port, DictionaryType dictionaryType):
 			}
 			
 			_wordToURLList->addRecord(word, (URLRecordList*)_head);
+			
 			//_________________________________________________________
 						
 		}
