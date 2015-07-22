@@ -217,11 +217,11 @@ SearchEngine::dispatch( FILE * fout, const char * documentRequested)
   char word_ext[50]; int i = 0;
   
   while((ch = *w) != '\0') {
-  	if(ch != '+' && ch != '\n') {
+  	if(ch != '+') {
 	        word_ext[i++] = ch;
 	}
 	else {
-		w++;
+		//w++;
 		if(i > 0) {
 	        word_ext[i] = '\0';
 	        i = 0;
