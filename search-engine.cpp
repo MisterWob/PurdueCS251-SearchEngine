@@ -84,7 +84,7 @@ SearchEngine::SearchEngine( int port, DictionaryType dictionaryType):
 	free(local_buffer);
 	fclose(file);
 	
-	/*file = fopen("word.txt", "r");
+	file = fopen("word.txt", "r");
 	local_buffer = (char*) malloc(500);
 	
 	while(fgets(local_buffer, 500, file)) {
@@ -92,17 +92,18 @@ SearchEngine::SearchEngine( int port, DictionaryType dictionaryType):
 			
 			char * t = (char*)malloc(500);
 			t = strtok(local_buffer, " ");
-			
+			printf("t %s\n", t);
 			char * word = (char*) malloc(100);
 			word = strdup(t);
 			
 			char * numString = strtok(NULL, " \n");
+			printf("numString %s\n", numString);
 			char * ns = numString;
 			int j = 0;
 			int ch;
 			char * index = (char*) malloc(20);
 			
-			while((ch = *ns) != '\0') {
+			/*while((ch = *ns) != '\0') {
 				if(ch != ' ') {
 					index[j] = ch; j++;
 				}
@@ -113,10 +114,10 @@ SearchEngine::SearchEngine( int port, DictionaryType dictionaryType):
 						
 					}
 				}
-			}
+			}*/
 			
 		}
-	}*/
+	}
 	
 }
 
