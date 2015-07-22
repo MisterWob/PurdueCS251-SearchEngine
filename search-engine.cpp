@@ -170,7 +170,7 @@ SearchEngine::dispatch( FILE * fout, const char * documentRequested)
     fprintf(fout, "<CENTER><H1><em>Boiler Search</em></H1>\n");
     fprintf(fout, "<H2>\n");
     fprintf(fout, "<FORM ACTION=\"search\">\n");
-    fprintf(fout, "Search: max search terms = 500\n");
+    fprintf(fout, "Search: \nmax search terms = 500\n");
     fprintf(fout, "<INPUT TYPE=\"text\" NAME=\"word\" MAXLENGTH=\"80\"><P>\n");
     fprintf(fout, "</H2>\n");
     fprintf(fout, "</FORM></CENTER>\n");
