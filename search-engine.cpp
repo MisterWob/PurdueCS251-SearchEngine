@@ -50,10 +50,10 @@ SearchEngine::SearchEngine( int port, DictionaryType dictionaryType):
 		//int index = lb[0] - '0';
 		//lb += 2;
 		
-		while(*lb != ' ') {
-			*is = *lb;
-			is++; lb++;
-		}
+		//while(*lb != ' ') {
+			//*is = *lb;
+			//is++; lb++;
+		//}
 		
 		*is = '\0';
 		
