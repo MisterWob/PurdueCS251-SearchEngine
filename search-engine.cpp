@@ -283,7 +283,7 @@ SearchEngine::dispatch( FILE * fout, const char * documentRequested)
   int count2 = 0;
   bool seen =false;
   
-  for(int i = 0; i < wordCount; i++) {
+  /*for(int i = 0; i < wordCount; i++) {
   	
   	URLRecordList * _record = (URLRecordList*)_wordToURLList->findRecord(word_list[i]);
     URLRecordList * _next =  _record->_next;
@@ -308,7 +308,7 @@ SearchEngine::dispatch( FILE * fout, const char * documentRequested)
   	 	_record = _next;	
   	 	
   	 }
-  }
+  }*/
   
   
 
