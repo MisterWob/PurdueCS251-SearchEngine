@@ -187,6 +187,7 @@ SearchEngine::dispatch( FILE * fout, const char * documentRequested)
 
   // Here the URLs printed are hardwired
   
+  printf("hello!\n");
   if(strstr(documentRequested, "/search?word=") != NULL) {
   	printf("hey!\n");
   }
