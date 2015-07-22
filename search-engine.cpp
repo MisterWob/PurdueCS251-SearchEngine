@@ -40,7 +40,7 @@ SearchEngine::SearchEngine( int port, DictionaryType dictionaryType):
   	if(strcmp(local_buffer, "\n") != 0) {
   		
   		char * t = (char*)malloc(700);
-  		t = strtok(local_buffer, " \n");
+  		t = strtok(local_buffer, "\n");
   		
   		char * lb = strdup(local_buffer);
 		
