@@ -198,6 +198,7 @@ SearchEngine::dispatch( FILE * fout, const char * documentRequested)
   
   char * word = (char*) malloc(100);
   word = search + 13;
+  char * w = word;
   
   printf("word: %s\n",word);
   
@@ -209,26 +210,27 @@ SearchEngine::dispatch( FILE * fout, const char * documentRequested)
   
   int wordCount;
   wordCount = 0;
-  
-  char * sep = (char*) malloc(50);
-  
-  sep = strtok(word, "+");
-  
-  /*while(word != NULL) {
-  	
-  	word_list[wordCount] = (char*) malloc(50);
-  	
-  	word_list[wordCount] = strdup(sep);
-  	printf("words: %s ",word_list[wordCount]);
-  	
-  	wordCount++;
-  	
-  	sep = strtok(NULL,"+");
-  }*/
-  
+
   printf("\n");
   int ch;
   
+  char word_ext[50]; int i = 0;
+  
+  while((ch = *w) != '\0') {
+  	if(ch != '+') {
+	        word_ext[i++] = ch;
+	}
+	else {
+		w++;
+		if(i > 0) {
+	        word_ext[i] = '\0';
+	        i = 0;
+			word_list[wordCount] = strdup(word_ext);
+			wordCount++;
+		}
+	}
+  	w++;
+  }
   //word = strdup()
   //extracting requests
   
