@@ -226,6 +226,7 @@ SearchEngine::dispatch( FILE * fout, const char * documentRequested)
 	        word_ext[i] = '\0';
 	        i = 0;
 			word_list[wordCount] = strdup(word_ext);
+			printf("word: %s\n", word_list[wordCount]);
 			wordCount++;
 		}
 	}
