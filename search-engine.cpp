@@ -41,6 +41,7 @@ SearchEngine::SearchEngine( int port, DictionaryType dictionaryType):
   		
   		char * t = (char*)malloc(700);
   		t = strtok(local_buffer, " \n");
+  		printf("aa\n");
   		
   		char * lb = local_buffer;
 		int index = lb[0] - '0';
