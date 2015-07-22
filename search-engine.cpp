@@ -44,7 +44,7 @@ SearchEngine::SearchEngine( int port, DictionaryType dictionaryType):
   		
   		//Buffer for one url and description
   		char * t = (char*)malloc(700);
-  		t = strtok(local_buffer, "\n");
+  		t = strtok(local_buffer, " \n");
   		
   		char * lb = strdup(local_buffer);
 		printf("lb: %s\n", lb);
