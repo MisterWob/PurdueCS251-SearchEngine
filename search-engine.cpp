@@ -47,7 +47,7 @@ SearchEngine::SearchEngine( int port, DictionaryType dictionaryType):
   		t = strtok(local_buffer, "\n");
   		
   		char * lb = strdup(local_buffer);
-		
+		printf("lb: %s\n", lb);
 		//string for index
 		
 		char * i_string = (char*) malloc(100);
@@ -186,6 +186,10 @@ SearchEngine::dispatch( FILE * fout, const char * documentRequested)
   // in HTML. Make the output look nicer.
 
   // Here the URLs printed are hardwired
+  
+  if(strstr(documentRequested, "/search?word=") == 0) {
+  	
+  }
   
   const int nurls=2;
 
