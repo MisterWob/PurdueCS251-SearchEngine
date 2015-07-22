@@ -186,12 +186,13 @@ SearchEngine::dispatch( FILE * fout, const char * documentRequested)
   // in HTML. Make the output look nicer.
 
   // Here the URLs printed are hardwired
-  
-  printf("hello!\n");
+	
   if(strstr(documentRequested, "/search?word=") != NULL) {
   	printf("hey!\n");
   }
-  
+  else {
+  	printf("key\n");
+  }
   const int nurls=2;
 
   const char * words = "data structures";
