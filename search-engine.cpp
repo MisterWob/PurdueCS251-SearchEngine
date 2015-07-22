@@ -40,14 +40,14 @@ SearchEngine::SearchEngine( int port, DictionaryType dictionaryType):
   	if(strcmp(local_buffer, "\n") != 0) {
   		
   		char * t = (char*)malloc(700);
-  		t = strtok(local_buffer, " \n");
+  		t = strtok(local_buffer, "\n");
   		
   		char * lb = strdup(local_buffer);
 		
 		char * i_string = (char*) malloc(100);
 		strcpy(i_string,"");
 		char * is = i_string;
-		int index = lb[0] - '0';
+		int index;
 		//lb += 2;
 		
 		
@@ -58,7 +58,7 @@ SearchEngine::SearchEngine( int port, DictionaryType dictionaryType):
 		}
 		
 		*is = '\0';
-		
+		index = atoi(is);
 		
 		char * url;
 		url = strdup(lb);
