@@ -57,10 +57,10 @@ SearchEngine::SearchEngine( int port, DictionaryType dictionaryType):
 		
 		//Getting Index
 		
-		while(*lb != ' ') {
+		/*while(*lb != ' ') {
 			*is = *lb;
 			is++; lb++;
-		}
+		}*/
 		*is = '\0';
 		lb++; //removes whitespace
 		index = atoi(i_string);
