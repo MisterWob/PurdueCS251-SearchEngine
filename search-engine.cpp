@@ -42,14 +42,27 @@ SearchEngine::SearchEngine( int port, DictionaryType dictionaryType):
   		char * t = (char*)malloc(700);
   		t = strtok(local_buffer, " \n");
   		
-  		char * lb = local_buffer;
-		int index = lb[0] - '0';
-		lb += 2;
+  		char * lb = strdup(local_buffer);
+		
+		char * i_string = (char*) malloc(100);
+		strcpy(i_string,"");
+		char * is = i_string;
+		//int index = lb[0] - '0';
+		//lb += 2;
+		
+		while(*lb != ' ') {
+			*is = *lb;
+			is++; lb++;
+		}
+		
+		*is = '\0';
+		
 		
 		char * url;
 		url = strdup(lb);
 		
-		fgets(local_buffer, 500, file);
+		printf("%s url:%s", i_string, url);
+		/*fgets(local_buffer, 500, file);
 		
 		char * desc = (char*) malloc(500);
 		t = strtok(local_buffer, "\n");
@@ -57,7 +70,7 @@ SearchEngine::SearchEngine( int port, DictionaryType dictionaryType):
 	
 		records[i]->_url = strdup(url);
 		records[i]->_description = strdup(desc);
-		printf("%d url: %s desc: %s\n\n", index, records[i]->_url, records[i]->_description);
+		printf("%d url: %s desc: %s\n\n", index, records[i]->_url, records[i]->_description);*/
 		
   	}
   }
