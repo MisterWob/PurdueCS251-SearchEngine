@@ -84,7 +84,7 @@ SearchEngine::SearchEngine( int port, DictionaryType dictionaryType):
 		
   	}
   }
-printf("url.txt populated...\n");
+printf("\n\nurl.txt populated...\n");
 	free(local_buffer);
 	//free(url);
 	//free(desc);
