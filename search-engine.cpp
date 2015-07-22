@@ -268,7 +268,7 @@ SearchEngine::dispatch( FILE * fout, const char * documentRequested)
   };
   
   const char * description[] = {
-
+	""
   };
 
   fprintf( stderr, "Search for words: \"%s\"\n", words);
