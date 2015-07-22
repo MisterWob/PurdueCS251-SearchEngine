@@ -217,7 +217,7 @@ SearchEngine::dispatch( FILE * fout, const char * documentRequested)
   char word_ext[50]; int i = 0;
   
   while((ch = *w) != '\0') {
-  	if(ch != '+') {
+  	if(ch != '+' && ch != '\0') {
 	        word_ext[i++] = ch;
 	}
 	else {
