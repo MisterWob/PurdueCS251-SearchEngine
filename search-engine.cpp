@@ -190,10 +190,28 @@ SearchEngine::dispatch( FILE * fout, const char * documentRequested)
   if(strstr(documentRequested, "/search?word=") == NULL) {
   	return;
   }
+  else {
+  	printf("%s\n", documentRequested);
+  }
   
   char * search = strdup(documentRequested);
   
   char ** word_list = new char*[500]; 
+  
+  for(int i = 0; i < 500; i++) {
+  	word_list[i] = NULL;
+  }
+  
+  int wordCount;
+  wordCount = 0;
+  
+  char * word = (char*) malloc(100);
+  
+  int ch;
+  
+  //word = strdup(strstr())
+  //extracting requests
+  
   
   const int nurls=2;
 
