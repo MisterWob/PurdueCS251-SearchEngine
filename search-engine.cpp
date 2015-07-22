@@ -63,7 +63,7 @@ SearchEngine::SearchEngine( int port, DictionaryType dictionaryType):
 		
 		//Getting URL
 		
-		char * url = strtok(lb, "\n");
+		char * url = strtok(lb, " \n");
 		url = strdup(url);
 		
 		//printf("%s url:%s", i_string, url);
