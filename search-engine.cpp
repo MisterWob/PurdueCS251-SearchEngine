@@ -268,7 +268,8 @@ SearchEngine::dispatch( FILE * fout, const char * documentRequested)
   };
   
   const char * description[] = {
-	""
+    "Computer Science Department. Purdue University.",
+    "CS251 Data Structures"
   };
 
   fprintf( stderr, "Search for words: \"%s\"\n", words);
