@@ -5,6 +5,7 @@
 #include <cstdlib>
 
 DictionaryType dt;
+int maxURLs = 1000;
 
 SearchEngine::SearchEngine( int port, DictionaryType dictionaryType):
   MiniHTTPD(port)
@@ -256,9 +257,8 @@ SearchEngine::dispatch( FILE * fout, const char * documentRequested)
   
   //_________________________________________________________________
 //printf("cat_string %s\n", cat_string);
-  
-  
-  const int nurls=2;
+    
+  const int nurls=0;
 
   const char * words = "data structures";
 
@@ -277,6 +277,40 @@ SearchEngine::dispatch( FILE * fout, const char * documentRequested)
   fprintf( fout, "<TITLE>Search Results</TITLE>\r\n");
   fprintf( fout, "<H1> <Center><em>Boiler Search</em></H1>\n");
   fprintf( fout, "<H2> Search Results for \"%s\"</center></H2>\n", words );
+
+  URLRecord ** url_list = new URLRecord * [maxURLs];
+  int count1 = 0;
+  int count2 = 0;
+  bool seen =false;
+  
+  for(int i = 0; i < wordCount; i++) {
+  	
+  	URLRecordList * _record = (URLRecordList*)_wordToURLList->findRecord(word_list[i]);
+    URLRecordList * _next =  _record->_next;
+  	 
+  	 while(_record != NULL) {
+  	 	
+  	 	seen = false;
+  	 	
+  	 	for(int j = 0; j < count1; j++) {
+  	 		
+  	 		if(url_list[j] == _record->_urlRecord) {// Make changes to add better check
+  	 			seen = true;
+  	 			break;
+  	 		}
+  	 		
+  	 	}
+  	 	
+  	 	if(seen != true) {
+  	 		url_list[count1] = _record->_urlRecord;
+  	 		count1++;
+  	 	}
+  	 	_record = _next;	
+  	 	
+  	 }
+  }
+  
+  
 
   for ( int i = 0; i < nurls; i++ ) {
     fprintf( fout, "<h3>%d. <a href=\"%s\">%s</a><h3>\n", i+1, urls[i], urls[i] );
@@ -302,6 +336,7 @@ printUsage()
 
   fprintf(stderr, "%s", usage);
 }
+
 
 int main(int argc, char ** argv)
 {
