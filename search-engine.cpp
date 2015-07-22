@@ -214,7 +214,7 @@ SearchEngine::dispatch( FILE * fout, const char * documentRequested)
   
   sep = strtok(word, "+");
   
-  while(word != NULL) {
+  /*while(word != NULL) {
   	
   	word_list[wordCount] = (char*) malloc(50);
   	
@@ -224,7 +224,7 @@ SearchEngine::dispatch( FILE * fout, const char * documentRequested)
   	wordCount++;
   	
   	sep = strtok(NULL,"+");
-  }
+  }*/
   
   printf("\n");
   int ch;
