@@ -16,6 +16,8 @@ SearchEngine::SearchEngine( int port, DictionaryType dictionaryType):
 	else if(dictionaryType == BinarySearchDictionaryType) _wordToURLList = new BinarySearchDictionary();
 	else _wordToURLList = NULL;
 	
+	printf("aa\n");
+	
 	dt = dictionaryType;
   // Populate dictionary and sort it if necessary
   
