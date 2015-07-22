@@ -198,7 +198,8 @@ SearchEngine::dispatch( FILE * fout, const char * documentRequested)
   
   char * word = (char*) malloc(100);
   word = search + 13;
-  printf("%s\n",word);
+  
+  printf("word: %s\n",word);
   
   char ** word_list = new char*[500]; 
   
