@@ -59,6 +59,7 @@ SearchEngine::SearchEngine( int port, DictionaryType dictionaryType):
 			is++; lb++;
 		}
 		*is = '\0';
+		lb++;
 		index = atoi(i_string);
 		
 		//Getting URL
