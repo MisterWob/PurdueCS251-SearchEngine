@@ -220,6 +220,9 @@ SearchEngine::dispatch( FILE * fout, const char * documentRequested)
   	
   	word_list[wordCount] = strdup(sep);
   	printf("words: %s ",word_list[wordCount]);
+  	
+  	wordCount++;
+  	
   	sep = strtok(NULL,"+");
   }
   
