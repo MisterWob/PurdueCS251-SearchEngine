@@ -24,6 +24,7 @@ SearchEngine::SearchEngine( int port, DictionaryType dictionaryType):
   FILE *file = fopen("url.txt", "r");
   printf("2.\n");
   char * local_buffer = (char*) malloc(5000);
+  printf("3.\n");
   strcpy(local_buffer, "");
   int maxURLs = 1001;
   URLRecord ** records = new URLRecord*[maxURLs];
