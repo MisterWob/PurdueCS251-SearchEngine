@@ -200,7 +200,7 @@ SearchEngine::dispatch( FILE * fout, const char * documentRequested)
   word = search + 13;
   char * w = word;
   
-  printf("word: %s\n",word);
+  printf("search: %s\n",word);
   
   char ** word_list = new char*[500]; 
   
@@ -232,6 +232,14 @@ SearchEngine::dispatch( FILE * fout, const char * documentRequested)
 	}
   	w++;
   }
+  
+  if(i > 0) {
+	        word_ext[i] = '\0';
+	        i = 0;
+			word_list[wordCount] = strdup(word_ext);
+			printf("word: %s\n", word_list[wordCount]);
+			wordCount++;
+}
   //word = strdup()
   //extracting requests
   
