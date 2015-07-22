@@ -312,8 +312,8 @@ SearchEngine::dispatch( FILE * fout, const char * documentRequested)
   
 
   for ( int i = 0; i < nurls; i++ ) {
-    fprintf( fout, "<h3>%d. <a href=\"%s\">%s</a><h3>\n", i+1, urls[i], urls[i] );
-    fprintf( fout, "<blockquote>%s<p></blockquote>\n", description[i] );
+    fprintf( fout, "<h3>%d. <a href=\"%s\">%s</a><h3>\n", i+1, url_list[i]->_url, url_list[i]->_url );
+    fprintf( fout, "<blockquote>%s<p></blockquote>\n", url_list[i]->_description );
   }
 
   // Add search form at the end
