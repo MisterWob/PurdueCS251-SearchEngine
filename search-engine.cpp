@@ -84,7 +84,7 @@ SearchEngine::SearchEngine( int port, DictionaryType dictionaryType):
 		
   	}
   }
-
+printf("url.txt populated...\n");
 	free(local_buffer);
 	//free(url);
 	//free(desc);
@@ -103,7 +103,7 @@ SearchEngine::SearchEngine( int port, DictionaryType dictionaryType):
 			t = strtok(local_buffer, " ");
 			char * word = (char*) malloc(100);
 			word = strdup(t);
-			printf("word: %s ", word);
+			//printf("word: %s ", word);
 			//Getting indices
 			char * numString = strtok(NULL, "\n");
 			char * ns = strdup(numString);
@@ -156,9 +156,9 @@ SearchEngine::SearchEngine( int port, DictionaryType dictionaryType):
 			//_________________________________________________________
 						
 		}
-		printf("\n");
+		//printf("\n");
 	}
-	
+	printf("word.txt populated...\n");
 }
 
 void
