@@ -285,11 +285,10 @@ SearchEngine::dispatch( FILE * fout, const char * documentRequested)
  
   for(int i = 0; i < wordCount; i++) {
   	
-  	URLRecordList * _record = (URLRecordList*)_wordToURLList->findRecord(word_list[i]);
-    URLRecordList * _next =  _record->_next;
+  	URLRecordList * _record = (URLRecordList*)_wordToURLList->findRecord(word_list[i]);  
   	 
   	 while(_record != NULL) {
-  	 	
+  	 	URLRecordList * _next = _record->_next;
   	 	seen = false;
   	 	
   	 	for(int j = 0; j < count1; j++) {
