@@ -35,19 +35,23 @@ SearchEngine::SearchEngine( int port, DictionaryType dictionaryType):
   	records[i] = new URLRecord();
   }
   
-   printf("1.\n");
+  
   
   int c;
   int i = 0;
   int ncounter = 0;
   
   while(fgets(local_buffer,500, file)) {
+   printf("1.\n");
   	if(strcmp(local_buffer, "\n") != 0) {
-  		
+  	
+  		 printf("2.\n");
+  		 
   		char * t = (char*)malloc(700);
   		t = strtok(local_buffer, " \n");
-  		printf("aa\n");
   		
+  		printf("aa\n");
+
   		char * lb = local_buffer;
 		int index = lb[0] - '0';
 		lb += 2;
