@@ -58,7 +58,7 @@ SearchEngine::SearchEngine( int port, DictionaryType dictionaryType):
 		}
 		
 		*is = '\0';
-		index = atoi(is);
+		index = atoi(i_string);
 		
 		char * url;
 		url = strdup(lb);
