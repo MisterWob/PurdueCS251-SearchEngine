@@ -128,7 +128,7 @@ SearchEngine::SearchEngine( int port, DictionaryType dictionaryType):
 						j = 0;
 						
 						int index = atoi(index_string);
-						printf("%d ", index);
+						//printf("%d ", index);
 						if(records[index]->_url != NULL) {
 							URLRecordList * newNode = new URLRecordList();
 							
