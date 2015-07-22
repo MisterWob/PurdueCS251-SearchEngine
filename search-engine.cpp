@@ -103,7 +103,7 @@ SearchEngine::SearchEngine( int port, DictionaryType dictionaryType):
 			t = strtok(local_buffer, " ");
 			char * word = (char*) malloc(100);
 			word = strdup(t);
-			
+			printf("word: %s ", word);
 			//Getting indices
 			char * numString = strtok(NULL, "\n");
 			char * ns = strdup(numString);
@@ -117,6 +117,7 @@ SearchEngine::SearchEngine( int port, DictionaryType dictionaryType):
 			
 			char * index_string = (char*) malloc(20);
 			
+			//Gets individual indices
 			while((ch = *ns) != '\0') {
 				if(ch != ' ') {
 					index_string[j] = ch; j++;
@@ -127,7 +128,7 @@ SearchEngine::SearchEngine( int port, DictionaryType dictionaryType):
 						j = 0;
 						
 						int index = atoi(index_string);
-						
+						printf("%d ", index);
 						if(records[index]->_url != NULL) {
 							URLRecordList * newNode = new URLRecordList();
 							
@@ -149,8 +150,12 @@ SearchEngine::SearchEngine( int port, DictionaryType dictionaryType):
 				}
 				ns++;
 			}
+			
+			_wordToURLList->addRecord(word, (URLRecordList*)_head);
+			//_________________________________________________________
 						
 		}
+		printf("\n");
 	}
 	
 }
