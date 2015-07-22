@@ -217,7 +217,7 @@ SearchEngine::dispatch( FILE * fout, const char * documentRequested)
   char word_ext[50]; int i = 0;
   
   while((ch = *w) != '\0') {
-  	if(ch != '+' && ch != '\0') {
+  	if(ch != '+') {
 	        word_ext[i++] = ch;
 	}
 	else {
@@ -233,6 +233,13 @@ SearchEngine::dispatch( FILE * fout, const char * documentRequested)
   	w++;
   }
   
+  if(ch == '\0') {
+  			word_ext[i] = '\0';
+	        i = 0;
+			word_list[wordCount] = strdup(word_ext);
+			printf("word: %s\n", word_list[wordCount]);
+			wordCount++;
+  }
   //word = strdup()
   //extracting requests
   
