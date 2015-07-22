@@ -309,11 +309,15 @@ SearchEngine::dispatch( FILE * fout, const char * documentRequested)
   	 }
   }
   
-  
+  int _index = 0;
 
-  for ( int i = 0; i < nurls; i++ ) {
-    fprintf( fout, "<h3>%d. <a href=\"%s\">%s</a><h3>\n", i+1, url_list[i]->_url, url_list[i]->_url );
-    fprintf( fout, "<blockquote>%s<p></blockquote>\n", url_list[i]->_description );
+  for ( int i = 0; i < wordCount; i++ ) {
+  
+  if(url_list[i] != NULL) {
+    	fprintf( fout, "<h3>%d. <a href=\"%s\">%s</a><h3>\n", _index+1, url_list[i]->_url, url_list[i]->_url );
+    	fprintf( fout, "<blockquote>%s<p></blockquote>\n", url_list[i]->_description );
+    	_index++;
+    }
   }
 
   // Add search form at the end
