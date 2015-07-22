@@ -148,7 +148,7 @@ SearchEngine::SearchEngine( int port, DictionaryType dictionaryType):
 					}
 				}
 			}
-			
+			ns++;			
 		}
 	}
 	
