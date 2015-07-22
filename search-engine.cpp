@@ -267,10 +267,10 @@ SearchEngine::dispatch( FILE * fout, const char * documentRequested)
     "http://www.cs.purdue.edu/homes/cs251"
   };
   
-  //const char * description[] = {
-    //"Computer Science Department. Purdue University.",
-    //"CS251 Data Structures"
-  //};
+  const char * description[] = {
+    "Computer Science Department. Purdue University.",
+    "CS251 Data Structures"
+  };
 
   fprintf( stderr, "Search for words: \"%s\"\n", words);
 
@@ -314,7 +314,7 @@ SearchEngine::dispatch( FILE * fout, const char * documentRequested)
 
   for ( int i = 0; i < nurls; i++ ) {
     fprintf( fout, "<h3>%d. <a href=\"%s\">%s</a><h3>\n", i+1, urls[i], urls[i] );
-   // fprintf( fout, "<blockquote>%s<p></blockquote>\n", description[i] );
+    fprintf( fout, "<blockquote>%s<p></blockquote>\n", description[i] );
   }
 
   // Add search form at the end
