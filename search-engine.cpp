@@ -19,6 +19,7 @@ SearchEngine::SearchEngine( int port, DictionaryType dictionaryType):
 	dt = dictionaryType;
   // Populate dictionary and sort it if necessary
   
+  FILE *file = fopen("url.txt", "r");
   
   char * local_buffer = (char*) malloc(5000);
   strcpy(local_buffer, "");
@@ -29,7 +30,7 @@ SearchEngine::SearchEngine( int port, DictionaryType dictionaryType):
   	records[i] = new URLRecord();
   }
   
-  FILE *file = fopen("url.txt", "r");
+  
   
   int c;
   int i = 0;
@@ -38,7 +39,7 @@ SearchEngine::SearchEngine( int port, DictionaryType dictionaryType):
   while(fgets(local_buffer,500, file)) {
   	if(strcmp(local_buffer, "\n") != 0) {
   		
-  		char * t = (char*)malloc(500);
+  		char * t = (char*)malloc(700);
   		t = strtok(local_buffer, " \n");
   		
   		char * lb = local_buffer;
@@ -53,15 +54,50 @@ SearchEngine::SearchEngine( int port, DictionaryType dictionaryType):
 		char * desc = (char*) malloc(500);
 		t = strtok(local_buffer, "\n");
 		desc = strdup(t);
-		printf("hello\n");
+	
 		records[i]->_url = strdup(url);
 		records[i]->_description = strdup(desc);
+		printf("%d url: %s\n desc: %s", index, records[i]->_url, records[i]->_description);
 		
   	}
   }
 
+	free(local_buffer);
+	fclose(file);
 	
+	/*file = fopen("word.txt", "r");
+	local_buffer = (char*) malloc(500);
 	
+	while(fgets(local_buffer, 500, file)) {
+		if(strcmp(local_buffer, "\n") != '\0') {
+			
+			char * t = (char*)malloc(500);
+			t = strtok(local_buffer, " ");
+			
+			char * word = (char*) malloc(100);
+			word = strdup(t);
+			
+			char * numString = strtok(NULL, " \n");
+			char * ns = numString;
+			int j = 0;
+			int ch;
+			char * index = (char*) malloc(20);
+			
+			while((ch = *ns) != '\0') {
+				if(ch != ' ') {
+					index[j] = ch; j++;
+				}
+				else {
+					if(j > 0) {
+						index[j] = '\0';
+						j = 0;
+						
+					}
+				}
+			}
+			
+		}
+	}*/
 	
 }
 
