@@ -220,6 +220,8 @@ SearchEngine::dispatch( FILE * fout, const char * documentRequested)
   
   char word_ext[50]; int i = 0;
   
+  char * cat_string = (char*) malloc(1000);
+  strcpy(cat_string,"");
   //nextword___________________________________________
   
   while((ch = *w) != '\0') {
@@ -233,6 +235,8 @@ SearchEngine::dispatch( FILE * fout, const char * documentRequested)
 	        i = 0;
 			word_list[wordCount] = strdup(word_ext);
 			printf("word: %s\n", word_list[wordCount]);
+			strcat(cat_string, word_ext);
+			strcat(cat_string, " ");
 			wordCount++;
 		}
 	}
@@ -245,12 +249,13 @@ SearchEngine::dispatch( FILE * fout, const char * documentRequested)
 	    i = 0;
 		word_list[wordCount] = strdup(word_ext);
 		printf("word: %s\n", word_list[wordCount]);
+		strcat(cat_string, word_ext);
 		wordCount++;
   }
   //____________________________________________________
   
   //_________________________________________________________________
-
+printf("cat_string %s\n", cat_string);
   
   
   const int nurls=2;
