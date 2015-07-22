@@ -126,7 +126,7 @@ SearchEngine::SearchEngine( int port, DictionaryType dictionaryType):
 						index_string[j] = '\0';
 						j = 0;
 						
-						/*int index = atoi(index_string);
+						int index = atoi(index_string);
 						
 						if(records[index]->_url != NULL) {
 							URLRecordList * newNode = new URLRecordList();
@@ -144,7 +144,7 @@ SearchEngine::SearchEngine( int port, DictionaryType dictionaryType):
 							
 						}
 						else continue;
-						*/
+						
 					}
 				}
 				ns++;
