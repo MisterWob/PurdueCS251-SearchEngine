@@ -53,7 +53,7 @@ SearchEngine::SearchEngine( int port, DictionaryType dictionaryType):
 		
 		while(*lb != ' ') {
 			*is = *lb;
-			printf("lb %s\n", local_buffer);
+			//printf("lb %s\n", local_buffer);
 			is++; lb++;
 		}
 		
