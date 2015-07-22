@@ -15,12 +15,12 @@ SearchEngine::SearchEngine( int port, DictionaryType dictionaryType):
 	else if(dictionaryType == AVLDictionaryType) _wordToURLList = new AVLDictionary();
 	else if(dictionaryType == BinarySearchDictionaryType) _wordToURLList = new BinarySearchDictionary();
 	else _wordToURLList = NULL;
-		
+	
 	dt = dictionaryType;
   // Populate dictionary and sort it if necessary
   
   FILE *file = fopen("url.txt", "r");
-
+  
   char * local_buffer = (char*) malloc(5000);
   strcpy(local_buffer, "");
   int maxURLs = 1001;
@@ -38,23 +38,13 @@ SearchEngine::SearchEngine( int port, DictionaryType dictionaryType):
   
   while(fgets(local_buffer,500, file)) {
   	if(strcmp(local_buffer, "\n") != 0) {
-  		 
+  		
   		char * t = (char*)malloc(700);
   		t = strtok(local_buffer, " \n");
-
-  		char * lb = local_buffer;
   		
-  		char * index_store = (char*) malloc(10);
-  		strcpy(index_store, "");
-  		char * i_s = index_store;
-		
-		while(*lb != ' ') {
-			*i_s = *lb;
-			lb++; i_s++;
-		}
-		
-		*i_s = '\0';
-		int index = atoi(index_store); 
+  		char * lb = local_buffer;
+		int index = lb[0] - '0';
+		lb += 2;
 		
 		char * url;
 		url = strdup(lb);
@@ -67,8 +57,7 @@ SearchEngine::SearchEngine( int port, DictionaryType dictionaryType):
 	
 		records[i]->_url = strdup(url);
 		records[i]->_description = strdup(desc);
-		
-		printf("%d url: %s\n desc: %s\n", index, records[i]->_url, records[i]->_description);
+		printf("%d url: %s\n desc: %s", index, records[i]->_url, records[i]->_description);
 		
   	}
   }
