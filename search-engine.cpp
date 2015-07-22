@@ -39,29 +39,32 @@ SearchEngine::SearchEngine( int port, DictionaryType dictionaryType):
   while(fgets(local_buffer,500, file)) {
   	if(strcmp(local_buffer, "\n") != 0) {
   		
+  		//Buffer for one url and description
   		char * t = (char*)malloc(700);
   		t = strtok(local_buffer, "\n");
   		
   		char * lb = strdup(local_buffer);
 		
+		//string for index
+		
 		char * i_string = (char*) malloc(100);
 		strcpy(i_string,"");
 		char * is = i_string;
 		int index;
-		//lb += 2;
 		
+		//Getting Index
 		
 		while(*lb != ' ') {
 			*is = *lb;
-			//printf("lb %s\n", local_buffer);
 			is++; lb++;
 		}
-		
 		*is = '\0';
 		index = atoi(i_string);
 		
-		char * url;
-		url = strdup(lb);
+		//Getting URL
+		
+		char * url = strtok(lb, "\n");
+		url = strdup(url);
 		
 		//printf("%s url:%s", i_string, url);
 		fgets(local_buffer, 500, file);
