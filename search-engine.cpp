@@ -194,69 +194,48 @@ SearchEngine::dispatch( FILE * fout, const char * documentRequested)
 	
 	//Checking sanity of search request
   
-  if(strstr(documentRequested, "/search?word=") == NULL) {
-  	return;
-  }
-  else {
-  	printf("%s\n", documentRequested);
-  }
-  
-  char * search = strdup(documentRequested);
-  
-  //Extracting separate words______________________________________
-  
-  char * word = (char*) malloc(100);
-  word = search + 13;
-  char * w = word;
-  
-  //printf("search: %s\n",word);
-  
-  char ** word_list = new char*[500]; 
-  
-  for(int i = 0; i < 500; i++) {
-  	word_list[i] = NULL;
-  }
-  
-  int wordCount;
-  wordCount = 0;
+ if (strlen(documentRequested) < 13)
+		return;
+	
+	// extract query string
+	char *param = new char[strlen(documentRequested)];
+	strcpy(param, documentRequested+13);
 
-  printf("\n");
-  int ch;
+	// initialize words list
+	 char ** word_list = new char*[500]; 
   
-  char word_ext[50]; int l = 0;
-  
-  char * cat_string = (char*) malloc(1000);
-  strcpy(cat_string,"");
-  //nextword___________________________________________
-  
-  while((ch = *w) != '\0') {
-  	if(ch != '+') {
-	        word_ext[l++] = ch;
-	}
-	else {
-		//w++;
-		if(l > 0) {
-	        word_ext[l] = '\0';
-	        l = 0;
-			word_list[wordCount] = strdup(word_ext);
-			//printf("word: %s\n", word_list[wordCount]);
-			strcat(cat_string, word_ext);
-			strcat(cat_string, " ");
-			wordCount++;
-		}
-	}
-  	w++;
-  }
-  
-  //Getting last word out
-  if(ch == '\0') {
-  		word_ext[l] = '\0';
-	    l = 0;
-		word_list[wordCount] = strdup(word_ext);
-		//printf("word: %s\n", word_list[wordCount]);
-		strcat(cat_string, word_ext);
+  	for(int i = 0; i < 500; i++) {
+  		word_list[i] = NULL;
+  	}
+	
+	// parse url for search parameters
+	int wordCount;
+	wordCount = 0;
+	
+	char *word;
+	word = strtok(param, "+");
+	
+	while (word != NULL)
+	{
+		word_list[wordCount] = new char[50];
+		
+		strcpy(word_list[wordCount], word);
 		wordCount++;
-  }
+		
+		word = strtok(NULL, "+");
+	}
+
+	// create friendly search string
+	char *query = new char[100*50];
+	strcpy(query, "");
+	
+	for (int i = 0; i < wordCount; i++)
+	{
+		strcat(query, word_list[i]);
+		
+		if (i < wordCount - 1)
+			strcat(query, " ");
+	}
   
  
   //____________________________________________________
@@ -272,7 +251,7 @@ SearchEngine::dispatch( FILE * fout, const char * documentRequested)
 
   fprintf( fout, "<TITLE>Search Results</TITLE>\r\n");
   fprintf( fout, "<H1> <Center><em>Boiler Search</em></H1>\n");
-  fprintf( fout, "<H2> Search Results for \"%s\"</center></H2>\n", word_ext );
+ // fprintf( fout, "<H2> Search Results for \"%s\"</center></H2>\n", word_ext );
 
   URLRecord ** url_list = new URLRecord * [500];
   int count1 = 0;
