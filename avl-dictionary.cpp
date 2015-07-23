@@ -99,6 +99,7 @@ AVLDictionary::addRecord( KeyType key, DataType record)
 	}
 	
 	// Call restructure
+	restructure(n);
 
 	if (debug) {
 		checkRecursive(root);
@@ -194,7 +195,7 @@ AVLDictionary::restructure(AVLNode * n) {
             
         }
         
-           else {
+        else {
             if(y->left == x) {
                 a = x;
                 b = y;
