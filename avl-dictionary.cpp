@@ -155,7 +155,7 @@ AVLDictionary::restructure(AVLNode * n) {
         AVLNode *x = NULL;
         mh = 0;
         if(y->left != NULL) {
-            z = y->left;
+            x = y->left;
             mh = x->height;
         }
         
@@ -187,7 +187,7 @@ AVLDictionary::restructure(AVLNode * n) {
         
            else {
             if(y->left == x) {
-                a = z;
+                a = x;
                 b = y;
                 c = z;
                 t0 = x->left;
