@@ -342,7 +342,7 @@ SearchEngine::dispatch( FILE * fout, const char * documentRequested)
   if(url_list[i] == NULL) continue;
   
     	fprintf( fout, "<h3><font color =\"white\">%d. </font><a href=\"%s\"> <font face=\"Helvetica\">%s</font></a><h3>\n", count2+1, url_list[i]->_url, url_list[i]->_url );
-    	fprintf( fout, "<font color=\"white\" font face=\"Helvetica\">%s</font><p>\n", url_list[i]->_description);
+    	fprintf( fout, "<i><font color=\"white\" font face=\"Helvetica\">%s</font></i><p>\n", url_list[i]->_description);
     	count2++;
     
   }
