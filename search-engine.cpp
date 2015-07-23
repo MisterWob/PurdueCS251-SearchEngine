@@ -277,7 +277,7 @@ SearchEngine::dispatch( FILE * fout, const char * documentRequested)
   fprintf( fout, "<TITLE>Search Results</TITLE>\r\n");
   fprintf(fout, "<BODY background=\"http://www.cre8tiveduo.net/wp-content/uploads/2015/01/Purple-City-Lights-Bokeh-Free-Wallpaper-HD.jpg\">\n");
   fprintf( fout, "<H1> <Center><font color =\"white\">Boiler Search</font></H1>\n");
-  fprintf( fout, "<H2> Search Results for \"%s\"</center></H2>\n", cat_string );
+  fprintf( fout, "<H2> Search Results for <font color =\"white\">\"%s\"<\font></center></H2>\n", cat_string );
   //fprintf(fout, "</BODY>");
 
   URLRecord ** url_list = new URLRecord * [500];
@@ -341,7 +341,7 @@ SearchEngine::dispatch( FILE * fout, const char * documentRequested)
   
   if(url_list[i] == NULL) continue;
   
-    	fprintf( fout, "<h3>%d. <a href=\"%s\"> <font face=\"Helvetica\">%s</font></a><h3>\n", count2+1, url_list[i]->_url, url_list[i]->_url );
+    	fprintf( fout, "<h3><font color =\"white\">%d. </font><a href=\"%s\"> <font face=\"Helvetica\">%s</font></a><h3>\n", count2+1, url_list[i]->_url, url_list[i]->_url );
     	fprintf( fout, "<font color=\"white\" font face=\"Helvetica\">%s</font><p>\n", url_list[i]->_description);
     	count2++;
     
