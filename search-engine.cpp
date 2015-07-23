@@ -155,7 +155,7 @@ printf("\n\nurl.txt populated...\n");
 			}
 			
 			_wordToURLList->addRecord(word, (URLRecordList*)_head);
-			
+			printf("word %s\n", word);
 			//_________________________________________________________
 						
 		}
@@ -281,7 +281,9 @@ SearchEngine::dispatch( FILE * fout, const char * documentRequested)
   	
   	URLRecordList * _record = (URLRecordList*)_wordToURLList->findRecord(word_list[m]);  
   	 
+  	 
   	 while(_record != NULL) {
+  	 	
   	 	
   	 	bool seen = false;
   	 	
