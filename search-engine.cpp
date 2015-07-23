@@ -275,7 +275,7 @@ SearchEngine::dispatch( FILE * fout, const char * documentRequested)
   //fprintf( stderr, "Search for words: \"%s\"\n", words);
 
   fprintf( fout, "<TITLE>Search Results</TITLE>\r\n");
-
+  fprintf(fout, "<BODY background=\"http://7-themes.com/data_images/out/73/7021624-modern-architecture-wallpaper-for-desktop.jpg\">\n");
   fprintf( fout, "<H1> <Center>Boiler Search</H1>\n");
   fprintf( fout, "<H2> Search Results for \"%s\"</center></H2>\n", cat_string );
   //fprintf(fout, "</BODY>");
@@ -347,7 +347,7 @@ SearchEngine::dispatch( FILE * fout, const char * documentRequested)
     
   }
 
-  fprintf(fout, "<BODY background=\"http://7-themes.com/data_images/out/73/7021624-modern-architecture-wallpaper-for-desktop.jpg\">\n");
+  
 	fprintf(fout, "<h3><marquee><a href=\"http://data.cs.purdue.edu:%d/\">Search Home</a></marquee><h3>\n", port_href);
   // Add search form at the end
   fprintf(fout, "<HR><H2>\n");
