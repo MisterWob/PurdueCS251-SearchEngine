@@ -265,13 +265,13 @@ SearchEngine::dispatch( FILE * fout, const char * documentRequested)
     
   //const int nurls=2;
 
-  const char * words = "data structures";
+  //const char * words = "data structures";
 
-  fprintf( stderr, "Search for words: \"%s\"\n", words);
+  //fprintf( stderr, "Search for words: \"%s\"\n", words);
 
   fprintf( fout, "<TITLE>Search Results</TITLE>\r\n");
   fprintf( fout, "<H1> <Center><em>Boiler Search</em></H1>\n");
-  fprintf( fout, "<H2> Search Results for \"%s\"</center></H2>\n", words );
+  fprintf( fout, "<H2> Search Results for \"%s\"</center></H2>\n", word_ext );
 
   URLRecord ** url_list = new URLRecord * [500];
   int count1 = 0;
