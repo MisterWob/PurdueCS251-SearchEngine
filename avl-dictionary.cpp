@@ -118,7 +118,15 @@ AVLDictionary::restructure(AVLNode * n) {
 	z = n->parent;
 	
 	while(z != NULL) {
-		
+		int heightleft = 0;
+        if(z->left != NULL) {
+            heightleft = z->left->height;
+        }
+        
+        int heightright = 0;
+        if(z->right != NULL) {
+            heightright = z->right->height;
+        }
 	}
 	//Go upwards until root is found
 
