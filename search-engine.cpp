@@ -344,7 +344,7 @@ SearchEngine::dispatch( FILE * fout, const char * documentRequested)
     
   }
 
-	fprintf(fout, "<h3><a href=\"http://data.cs.purdue.edu:%d/\">Search Home</a><h3>\n", port_href);
+	fprintf(fout, "<h3><marquee><a href=\"http://data.cs.purdue.edu:%d/\">Search Home</a></marquee><h3>\n", port_href);
   // Add search form at the end
   fprintf(fout, "<HR><H2>\n");
   fprintf(fout, "<FORM ACTION=\"search\">\n");
