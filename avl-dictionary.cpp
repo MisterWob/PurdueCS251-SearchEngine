@@ -228,14 +228,17 @@ AVLDictionary::restructure(AVLNode * n) {
         c->left = t2;
         c->right = t3;
 
-        if(t0 != NULL)
-            t0->parent = a;
-        if(t1 != NULL)
-            t1->parent = a;
-        if(t2 != NULL)
-            t2->parent = c;
-        if(t3 != NULL)
-            t3->parent = c;
+        if(t0 != NULL) t0->parent = a;
+        if(t1 != NULL) t1->parent = a;
+        if(t2 != NULL) t2->parent = c;
+        if(t3 != NULL) t3->parent = c;
+            
+            maxheight = 0;
+        if(a->left != NULL) maxheight = a->left->height;
+        if(a->right != NULL && a->right->height > maxheight) {
+            maxheight = a->right->height;
+        }
+        a->height = 1+maxheight;
             
 	}
 	
