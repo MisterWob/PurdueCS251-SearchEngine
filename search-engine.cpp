@@ -275,7 +275,7 @@ SearchEngine::dispatch( FILE * fout, const char * documentRequested)
   //fprintf( stderr, "Search for words: \"%s\"\n", words);
 
   fprintf( fout, "<TITLE>Search Results</TITLE>\r\n");
-  fprintf(fout, "<BODY link=\"white\" vlink=\"white\" alink=\"white\" background=\"http://cdn.superbwallpapers.com/wallpapers/abstract/dar-pastel-blur-29203-1920x1080.jpg\">\n");
+  fprintf(fout, "<BODY link=\"#20B2AA\" vlink=\"#20B2AA\" alink=\"#20B2AA\" background=\"http://cdn.superbwallpapers.com/wallpapers/abstract/dar-pastel-blur-29203-1920x1080.jpg\">\n");
   fprintf( fout, "<H1> <Center><font color =\"white\">Boiler Search</font></H1>\n");
   fprintf( fout, "<H2> <font color =\"white\">Search Results for \"%s\"</font></center></H2>\n", cat_string );
   //fprintf(fout, "</BODY>");
@@ -341,7 +341,7 @@ SearchEngine::dispatch( FILE * fout, const char * documentRequested)
   
   if(url_list[i] == NULL) continue;
   
-    	fprintf( fout, "<h3><font color =\"#20B2AA\">%d. </font><a href=\"%s\"> <font face=\"Helvetica\ font color =\"#20B2AA\">%s</font></a><h3>\n", count2+1, url_list[i]->_url, url_list[i]->_url );
+    	fprintf( fout, "<h3><font color =\"#20B2AA\">%d. </font><a href=\"%s\"> <font face=\"Helvetica\">%s</font></a><h3>\n", count2+1, url_list[i]->_url, url_list[i]->_url );
     	fprintf( fout, "<i><font color=\"white\" font face=\"Helvetica\">%s</font></i><p>\n", url_list[i]->_description);
     	count2++;
     
