@@ -78,13 +78,14 @@ SearchEngine::SearchEngine( int port, DictionaryType dictionaryType):
 		t = strtok(local_buffer, "\n");
 		desc = strdup(t);
 	
-		records[i]->_url = strdup(url);
-		records[i]->_description = strdup(desc);
+		records[index]->_url = strdup(url);
+		records[index]->_description = strdup(desc);
 		
 		//printf("%d url:%s\ndesc:%s\n\n", index, records[i]->_url, records[i]->_description);
 		
   	}
   }
+
 printf("\n\nurl.txt populated...\n");
 	free(local_buffer);
 	//free(url);
