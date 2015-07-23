@@ -174,7 +174,7 @@ SearchEngine::dispatch( FILE * fout, const char * documentRequested)
    if (strcmp(documentRequested, "/")==0) {
     // Send initial form
     fprintf(fout, "<TITLE>Search v1.0</TITLE>\r\n");
-    fprintf(fout, "<BODY background=\"https://s-media-cache-ak0.pinimg.com/originals/f2/e9/53/f2e95302ce9ce1c1a0356fe5bed478b1.jpg\">\n");
+    fprintf(fout, "<BODY background=\"https://s-media-cache-ak0.pinimg.com/originals/f2/e9/53/f2e95302ce9ce1c1a0356fe5bed478b1.jpg\" style=\"background-attachment:fixed\">\n");
     fprintf(fout, "<CENTER><font color=\"white\" font size=\"200\" font face=\"Impact\">Boiler Search</font><CENTER>\n");
     fprintf(fout, "<H2>\n");
     fprintf(fout, "<font color=\"white\" font size=\"5\" font face=\"Helvetica\">v1.0</font>");
@@ -275,7 +275,7 @@ SearchEngine::dispatch( FILE * fout, const char * documentRequested)
   //fprintf( stderr, "Search for words: \"%s\"\n", words);
 
   fprintf( fout, "<TITLE>Search Results</TITLE>\r\n");
-  fprintf(fout, "<BODY link=\"#20B2AA\" vlink=\"#20B2AA\" alink=\"#20B2AA\" background=\"http://cdn.superbwallpapers.com/wallpapers/abstract/dar-pastel-blur-29203-1920x1080.jpg\">\n");
+  fprintf(fout, "<BODY style=\"background-attachment:fixed\" link=\"#20B2AA\" vlink=\"#20B2AA\" alink=\"#20B2AA\" background=\"http://cdn.superbwallpapers.com/wallpapers/abstract/dar-pastel-blur-29203-1920x1080.jpg\">\n");
   fprintf( fout, "<H1> <Center><font color =\"white\">Boiler Search</font></H1>\n");
   fprintf( fout, "<H2> <font color =\"white\">Search Results for \"%s\"</font></center></H2>\n", cat_string );
   //fprintf(fout, "</BODY>");
