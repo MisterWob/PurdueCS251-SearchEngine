@@ -168,6 +168,7 @@ printf("\n\nurl.txt populated...\n");
 void
 SearchEngine::dispatch( FILE * fout, const char * documentRequested)
 {
+
    if (strcmp(documentRequested, "/")==0) {
     // Send initial form
     fprintf(fout, "<TITLE>CS251 Search</TITLE>\r\n");
@@ -311,6 +312,7 @@ SearchEngine::dispatch( FILE * fout, const char * documentRequested)
     }
   
   
+  
   //int _index = 0;
 
   for ( int i = 0; i < count1; i++ ) {
@@ -318,7 +320,7 @@ SearchEngine::dispatch( FILE * fout, const char * documentRequested)
   if(url_list[i] == NULL) continue;
   
     	fprintf( fout, "<h3>%d. <a href=\"%s\">%s</a><h3>\n", count2+1, url_list[i]->_url, url_list[i]->_url );
-    	fprintf( fout, "<blockquote>%s<p></blockquote>\n", url_list[i]->_description );
+    	fprintf( fout, "<blockquote>%s, yolapuram<p></blockquote>\n", url_list[i]->_description);
     	count2++;
     
   }
