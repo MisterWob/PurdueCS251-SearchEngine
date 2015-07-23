@@ -311,6 +311,23 @@ SearchEngine::dispatch( FILE * fout, const char * documentRequested)
     	printf("url: %s\n", url_list[i]->_url);
     }
   
+  for(int t = 0; t < count1; t++) {
+  	for(int k = 0; k < wordCount; k++) {
+  		URLRecordList * r = (URLRecordList*)_wordToURLList->findRecord(word_list[k]);
+  		bool seen = false;
+  		
+  		while(r != NULL) {
+  			if(r->_urlRecord == url_list[t]) {
+  				seen = true;
+  			}
+  			r = r->_next;
+  		}
+  		
+  		if(seen == false) {
+  			url_list[t] = NULL;
+  		}
+  	}
+  }
   
   //int _index = 0;
 
