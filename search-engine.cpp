@@ -275,7 +275,7 @@ SearchEngine::dispatch( FILE * fout, const char * documentRequested)
 		}
 	}
 	
-	/*for (i = 0; i < listCount; i++)
+	for (i = 0; i < listCount; i++)
 	{
 		int j;
 		for (j = 0; j < numWords; j++)
@@ -298,7 +298,7 @@ SearchEngine::dispatch( FILE * fout, const char * documentRequested)
 			if (exists == 0)
 				list[i] = NULL;
 		}
-	}*/
+	}
 		
 	
 	for (i = 0; i < listCount; i++)
