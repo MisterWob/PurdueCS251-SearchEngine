@@ -174,7 +174,7 @@ SearchEngine::dispatch( FILE * fout, const char * documentRequested)
    if (strcmp(documentRequested, "/")==0) {
     // Send initial form
     fprintf(fout, "<TITLE>Search v1.0</TITLE>\r\n");
-    fprintf(fout, "<BODY backround = \"http://www.macwallhd.com/wp-content/Wallpapers/Abstract/City%20Building%20Download%20Mac%20Wallpapers%20Urban-7175061816.jpeg\"> ");
+    fprintf(fout, "<BODY backround =\"http://www.macwallhd.com/wp-content/Wallpapers/Abstract/City%20Building%20Download%20Mac%20Wallpapers%20Urban-7175061816.jpeg\">\n");
     fprintf(fout, "<CENTER><font color=\"blue\" font size=\"200\" font face=\"Helvetica\">S</font><font color=\"red\" font size=\"200\" font face=\"Helvetica\">e</font><font color=\"yellow\" font font size=\"200\" face=\"Helvetica\">a</font><font color=\"blue\" font size=\"200\" font face=\"Helvetica\">r</font><font color=\"green\" font size=\"200\" font face=\"Helvetica\">c</font><font color=\"red\" font size=\"200\" font face=\"Helvetica\">h</font><CENTER>\n");
     fprintf(fout, "<H2>\n");
     fprintf(fout, "<font color=\"gray\" font size=\"5\" font face=\"Helvetica\">v1.0</font>");
