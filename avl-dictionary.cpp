@@ -38,6 +38,14 @@ AVLDictionary::addRecord( KeyType key, DataType record)
     n->left = NULL;
     n->right = NULL;
     n->parent = NULL;
+    
+    if(root == NULL)
+	{
+        root = n;
+		nElements++;
+		
+        return true;
+    }
 	// Add your implementation here
 
 	//Find node to insert into 
