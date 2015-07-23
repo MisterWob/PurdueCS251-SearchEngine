@@ -121,13 +121,29 @@ AVLDictionary::restructure(AVLNode * n) {
 		int heightleft = 0;
         if(z->left != NULL) {
             heightleft = z->left->height;
-        }
+      	}
         
         int heightright = 0;
         if(z->right != NULL) {
             heightright = z->right->height;
         }
+        
+        int heightdiff = heightleft - heightright;
+   
+   		 if(heightdiff < 0) heightdiff = -heightdiff;
+    
+   		 if(heightleft > heightright) z->height = 1+heightleft;
+   		 else z->height = 1+heightright;
+    
+   		 if(heightdiff <= 1) {
+   	         z = z->parent;
+   	         continue;
+   		 }
 	}
+	
+	
+    
+    
 	//Go upwards until root is found
 
         // See class notes
