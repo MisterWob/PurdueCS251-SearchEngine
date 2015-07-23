@@ -177,7 +177,7 @@ SearchEngine::dispatch( FILE * fout, const char * documentRequested)
     fprintf(fout, "<BODY background=\"https://s-media-cache-ak0.pinimg.com/originals/f2/e9/53/f2e95302ce9ce1c1a0356fe5bed478b1.jpg\">\n");
     fprintf(fout, "<CENTER><font color=\"white\" font size=\"200\" font face=\"Impact\">Boiler Search</font><CENTER>\n");
     fprintf(fout, "<H2>\n");
-    fprintf(fout, "<font color=\"gray\" font size=\"5\" font face=\"Helvetica\">v1.0</font>");
+    fprintf(fout, "<font color=\"white\" font size=\"5\" font face=\"Helvetica\">v1.0</font>");
     fprintf(fout, "<FORM ACTION=\"search\">\n");
     fprintf(fout, "<INPUT TYPE=\"text\" NAME=\"word\" MAXLENGTH=\"1000\"><P>\n");
     fprintf(fout, "<p><font color =\"white\"font size=\"5\">&reg;Yash Shiroya | 2015</font></p>");
