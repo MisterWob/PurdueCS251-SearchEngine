@@ -239,6 +239,19 @@ AVLDictionary::restructure(AVLNode * n) {
             maxheight = a->right->height;
         }
         a->height = 1+maxheight;
+        
+        maxheight = 0;
+        if(c->left != NULL) maxheight = c->left->height;
+        if(c->right != NULL && c->right->height > maxheight) maxheight = c->right->height;
+        c->height = 1+maxheight;
+
+        maxheight = 0;
+        
+        if(b->left != NULL)
+            maxheight = b->left->height;
+        if(b->right != NULL && b->right->height > maxheight)
+            maxheight = b->right->height;
+        b->height = 1+maxheight;
             
 	}
 	
