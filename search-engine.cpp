@@ -286,18 +286,18 @@ SearchEngine::dispatch( FILE * fout, const char * documentRequested)
   	 while(_record != NULL) {
   	 	
   	 	
-  	 	bool seen = false;
+  	 	int seen = 0;
   	 	
   	 	for(int j = 0; j < count1; j++) {
   	 		
   	 		if(url_list[j] == _record->_urlRecord) {// Make changes to add better check
-  	 			seen = true;
+  	 			seen = 1;
   	 			break;
   	 		}
   	 		
   	 	}
   	 	
-  	 	if(seen == false) {
+  	 	if(seen == 0) {
   	 		url_list[count1] = _record->_urlRecord;
   	 		count1++;
   	 	}
