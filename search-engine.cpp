@@ -276,7 +276,7 @@ SearchEngine::dispatch( FILE * fout, const char * documentRequested)
 
   fprintf( fout, "<TITLE>Search Results</TITLE>\r\n");
   fprintf(fout, "<BODY background=\"http://www.imgbase.info/images/safe-wallpapers/miscellaneous/1_other_wallpapers/7628_1_other_wallpapers_simple.jpg\">\n");
-  fprintf( fout, "<H1> <Center><font color=\"white\">Quadro Search</font></H1>\n");
+  fprintf( fout, " <Center><font color =\"#E89619\">Quadro Search</font>\n");
   fprintf( fout, "<H2> Search Results for \"%s\"</center></H2>\n", cat_string );
   //fprintf(fout, "</BODY>");
 
