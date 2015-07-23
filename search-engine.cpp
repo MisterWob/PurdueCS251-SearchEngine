@@ -168,168 +168,168 @@ printf("\n\nurl.txt populated...\n");
 void
 SearchEngine::dispatch( FILE * fout, const char * documentRequested)
 {
-  if (strcmp(documentRequested, "/")==0) {
-    // Send initial form
-    fprintf(fout, "<TITLE>CS251 Search</TITLE>\r\n");
-    fprintf(fout, "<CENTER><H1><em><font color=\"green\">Boiler</font> <CENTER><H1><em><font color=\"blue\">Search</font></em></H1>\n");
-    fprintf(fout, "<H2>\n");
-    fprintf(fout, "<FORM ACTION=\"search\">\n");
-    fprintf(fout, "Search: \nmax search terms = 500\n");
-    fprintf(fout, "<INPUT TYPE=\"text\" NAME=\"word\" MAXLENGTH=\"1000\"><P>\n");
-    fprintf(fout, "</H2>\n");
-    fprintf(fout, "</FORM></CENTER>\n");
-    return;
-  }
-
-  // TODO: The words to search in "documentRequested" are in the form
-  // /search?word=a+b+c
-  //
-  // You need to separate the words before search
-  // Search the words in the dictionary and find the URLs that
-  // are common for al the words. Then print the URLs and descriptions
-  // in HTML. Make the output look nicer.
-
-  // Here the URLs printed are hardwired
-	
-	//Checking sanity of search request
-  
-  if(strstr(documentRequested, "/search?word=") == NULL) {
-  	return;
-  }
-  else {
-  	printf("%s\n", documentRequested);
-  }
-  
-  char * search = strdup(documentRequested);
-  
-  //Extracting separate words______________________________________
-  
-  char * word = (char*) malloc(100);
-  word = search + 13;
-  char * w = word;
-  
-  //printf("search: %s\n",word);
-  
-  char ** word_list = new char*[500]; 
-  
-  for(int i = 0; i < 500; i++) {
-  	word_list[i] = NULL;
-  }
-  
-  int wordCount;
-  wordCount = 0;
-
-  printf("\n");
-  int ch;
-  
-  char word_ext[50]; int l = 0;
-  
-  char * cat_string = (char*) malloc(1000);
-  strcpy(cat_string,"");
-  //nextword___________________________________________
-  
-  while((ch = *w) != '\0') {
-  	if(ch != '+') {
-	        word_ext[l++] = ch;
+  // display initial form
+	if (strcmp(documentRequested, "/")==0)
+	{
+		fprintf(fout, "<TITLE>CS251 Search</TITLE>\r\n");
+		fprintf(fout, "<CENTER><H1><em>Boiler Search</em></H1>\n");
+		fprintf(fout, "<H2>\n");
+		fprintf(fout, "<FORM ACTION=\"search\">\n");
+		fprintf(fout, "Search:\n");
+		fprintf(fout, "<INPUT TYPE=\"text\" NAME=\"word\" MAXLENGTH=\"80\"><P>\n");
+		fprintf(fout, "</H2>\n");
+		fprintf(fout, "</FORM></CENTER>\n");
+		return;
 	}
-	else {
-		//w++;
-		if(l > 0) {
-	        word_ext[l] = '\0';
-	        l = 0;
-			word_list[wordCount] = strdup(word_ext);
-			//printf("word: %s\n", word_list[wordCount]);
-			strcat(cat_string, word_ext);
-			strcat(cat_string, " ");
-			wordCount++;
+	
+	// ignore if this is not a search
+	if (strlen(documentRequested) < 13)
+		return;
+	
+	// extract query string
+	char *param = new char[strlen(documentRequested)];
+	strcpy(param, documentRequested+13);
+
+	// initialize words list
+	char **words = new char*[100];
+	int i;
+	for (i = 0; i < 100; i++)
+	{
+		words[i] = NULL;
+	}
+	
+	// parse url for search parameters
+	int numWords;
+	numWords = 0;
+	
+	char *word;
+	word = strtok(param, "+");
+	
+	while (word != NULL)
+	{
+		words[numWords] = new char[50];
+		
+		strcpy(words[numWords], word);
+		numWords++;
+		
+		word = strtok(NULL, "+");
+	}
+
+	// create friendly search string
+	char *query = new char[100*50];
+	strcpy(query, "");
+	
+	for (i = 0; i < numWords; i++)
+	{
+		strcat(query, words[i]);
+		
+		if (i < numWords - 1)
+			strcat(query, " ");
+	}
+	
+	// print search results
+	fprintf(stderr, "Search for words: \"%s\"\n", query);
+
+	fprintf(fout, "<TITLE>Search Results</TITLE>\r\n");
+	fprintf(fout, "<H1> <Center><em>Boiler Search</em></H1>\n");
+	fprintf(fout, "<H2> Search Results for \"%s\"</center></H2>\n", query);
+	
+	
+	
+	int counter;
+	counter = 0;
+	
+	int listCount;
+	listCount = 0;
+	
+	URLRecord **list = new URLRecord*[500];
+	
+	
+	
+	for (i = 0; i < numWords; i++)
+	{
+		URLRecordList* data;
+		data = (URLRecordList*)_wordToURLList->findRecord(words[i]);
+		
+		while (data != NULL)
+		{
+			int exists = 0;
+			
+			int j;
+			for (j = 0; j < listCount; j++)
+			{
+				if (list[j] == data->_urlRecord)
+				{
+					exists = 1;
+					break;
+				}
+			}
+			
+			if (exists == 0)
+			{
+				list[listCount] = data->_urlRecord;
+				listCount++;
+			}
+			
+			data = data->_next;
 		}
 	}
-  	w++;
-  }
-  
-  //Getting last word out
-  if(ch == '\0') {
-  		word_ext[l] = '\0';
-	    l = 0;
-		word_list[wordCount] = strdup(word_ext);
-		//printf("word: %s\n", word_list[wordCount]);
-		strcat(cat_string, word_ext);
-		//wordCount++;
-  }
-  
- 
-  //____________________________________________________
-  
-  //_________________________________________________________________
-//printf("cat_string %s\n", cat_string);
-    
-  //const int nurls=2;
-
-  //const char * words = "data structures";
-
-  //fprintf( stderr, "Search for words: \"%s\"\n", words);
-
-  fprintf( fout, "<TITLE>Search Results</TITLE>\r\n");
-  fprintf( fout, "<H1> <Center><em>Boiler Search</em></H1>\n");
-  fprintf( fout, "<H2> Search Results for \"%s\"</center></H2>\n", word_ext );
-
-  URLRecord ** url_list = new URLRecord * [500];
-  int count1 = 0;
-  int count2 = 0;
- // bool seen = false;
- 
-  for(int m = 0; m < wordCount; m++) {
-  	
-  	URLRecordList * _record = (URLRecordList*)_wordToURLList->findRecord(word_list[m]);  
-  	 
-  	 
-  	 while(_record != NULL) {
-  	 	
-  	 	
-  	 	bool seen = false;
-  	 	
-  	 	for(int j = 0; j < count1; j++) {
-  	 		
-  	 		if(url_list[j] == _record->_urlRecord) {// Make changes to add better check
-  	 			seen = true;
-  	 			break;
-  	 		}
-  	 		
-  	 	}
-  	 	
-  	 	if(seen == false) {
-  	 		url_list[count1] = _record->_urlRecord;
-  	 		count1++;
-  	 	}
-  	 	_record = _record->_next;	
-  	 	
-  	 }
-  }
-    for ( int i = 0; i < count1; i++ ) {
-    	//if(url_list[i] == NULL) continue;
-    	printf("url: %s\n", url_list[i]->_url);
-    }
-  
-  
-  //int _index = 0;
-
-  for ( int i = 0; i < count1; i++ ) {
-  
-  if(url_list[i] == NULL) continue;
-  
-    	fprintf( fout, "<h3>%d. <a href=\"%s\">%s</a><h3>\n", count2+1, url_list[i]->_url, url_list[i]->_url );
-    	fprintf( fout, "<blockquote>%s<p></blockquote>\n", url_list[i]->_description );
-    	count2++;
-    
-  }
-
-  // Add search form at the end
-  fprintf(fout, "<HR><H2>\n");
-  fprintf(fout, "<FORM ACTION=\"search\">\n");
-  fprintf(fout, "Search:\n");
-  fprintf(fout, "<INPUT TYPE=\"text\" NAME=\"word\" MAXLENGTH=\"80\"><P>\n");
-  fprintf(fout, "</H2>\n");
-  fprintf(fout, "</FORM>\n");
+	
+	for (i = 0; i < listCount; i++)
+	{
+		int j;
+		for (j = 0; j < numWords; j++)
+		{
+			URLRecordList* data;
+			data = (URLRecordList*)_wordToURLList->findRecord(words[j]);
+			
+			int exists = 0;
+			
+			while (data != NULL)
+			{
+				if (data->_urlRecord == list[i])
+				{
+					exists = 1;
+				}
+				
+				data = data->_next;
+			}
+			
+			if (exists == 0)
+				list[i] = NULL;
+		}
+	}
+		
+	
+	for (i = 0; i < listCount; i++)
+	{
+		if (list[i] == NULL) continue;
+		
+		fprintf(fout, "<h3>%d. <a href=\"%s\">%s</a><h3>\n", counter+1, list[i]->_url, list[i]->_url);
+		fprintf(fout, "<blockquote>%s<p></blockquote>\n", list[i]->_description);
+	
+		counter++;
+	}
+	
+	
+	if (dt == ArrayDictionaryType)
+		fprintf(fout, "<h3>Dictionary Used: Array Dictionary</h3>\n");
+	else if (dt == HashDictionaryType)
+		fprintf(fout, "<h3>Dictionary Used: Hash Dictionary</h3>\n");
+	else if (dt == AVLDictionaryType)
+		fprintf(fout, "<h3>Dictionary Used: AVL Dictionary</h3>\n");
+	else if (dt == BinarySearchDictionaryType)
+		fprintf(fout, "<h3>Dictionary Used: Binary Search Dictionary</h3>\n");
+	else
+		fprintf(fout, "<h3>Dictionary Used: Unknown Dictionary</h3>\n");
+	
+	// add search form at the end
+	fprintf(fout, "<HR><H2>\n");
+	fprintf(fout, "<FORM ACTION=\"search\">\n");
+	fprintf(fout, "Search:\n");
+	fprintf(fout, "<INPUT TYPE=\"text\" NAME=\"word\" MAXLENGTH=\"80\"><P>\n");
+	fprintf(fout, "</H2>\n");
+	fprintf(fout, "</FORM>\n");
 }
 
 void
