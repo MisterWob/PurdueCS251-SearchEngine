@@ -139,6 +139,26 @@ AVLDictionary::restructure(AVLNode * n) {
    	         z = z->parent;
    	         continue;
    		 }
+   		 
+   		 AVLNode *y = NULL;
+        int maxheight = 0;
+        if(z->left != NULL) {
+            y = z->left;
+            maxheight = y->height;
+        }
+        
+        if(z->right != NULL && z->right->height > maxheight) {
+            y = z->right;
+            maxheight = y->height;
+        }
+        
+        AVLNode *x = NULL;
+        maxheight = 0;
+        if(y->left != NULL)
+		{
+            x = y->left;
+            maxheight = x->height;
+        }
 	}
 	
 	
