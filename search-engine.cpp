@@ -352,7 +352,7 @@ SearchEngine::dispatch( FILE * fout, const char * documentRequested)
   // Add search form at the end
   fprintf(fout, "<HR><H2>\n");
   fprintf(fout, "<FORM ACTION=\"search\">\n");
-  fprintf(fout, "Search:\n");
+  fprintf(fout, "<font color =\"white\">Search:</font>\n");
   fprintf(fout, "<INPUT TYPE=\"text\" NAME=\"word\" MAXLENGTH=\"80\"><P>\n");
   fprintf(fout, "</H2>\n");
   fprintf(fout, "</FORM>\n");
