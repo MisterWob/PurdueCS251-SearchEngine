@@ -275,7 +275,7 @@ SearchEngine::dispatch( FILE * fout, const char * documentRequested)
   //fprintf( stderr, "Search for words: \"%s\"\n", words);
 
   fprintf( fout, "<TITLE>Search Results</TITLE>\r\n");
-  fprintf(fout, "<BODY background=\"http://www.imgbase.info/images/safe-wallpapers/miscellaneous/1_other_wallpapers/7628_1_other_wallpapers_simple.jpg\">\n");
+  fprintf(fout, "<BODY background=\"http://www.cre8tiveduo.net/wp-content/uploads/2015/01/Purple-City-Lights-Bokeh-Free-Wallpaper-HD.jpg\">\n");
   fprintf( fout, "<H1> <Center>Boiler Search</H1>\n");
   fprintf( fout, "<H2> Search Results for \"%s\"</center></H2>\n", cat_string );
   //fprintf(fout, "</BODY>");
