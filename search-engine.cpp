@@ -277,7 +277,7 @@ SearchEngine::dispatch( FILE * fout, const char * documentRequested)
   fprintf( fout, "<TITLE>Search Results</TITLE>\r\n");
   fprintf(fout, "<BODY background=\"http://www.cre8tiveduo.net/wp-content/uploads/2015/01/Purple-City-Lights-Bokeh-Free-Wallpaper-HD.jpg\">\n");
   fprintf( fout, "<H1> <Center><font color =\"white\">Boiler Search</font></H1>\n");
-  fprintf( fout, "<H2> Search Results for <font color =\"white\">\"%s\"<\font></center></H2>\n", cat_string );
+  fprintf( fout, "<H2> <font color =\"white\">Search Results for \"%s\"</font></center></H2>\n", cat_string );
   //fprintf(fout, "</BODY>");
 
   URLRecord ** url_list = new URLRecord * [500];
