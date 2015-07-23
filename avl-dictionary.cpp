@@ -52,6 +52,25 @@ AVLDictionary::addRecord( KeyType key, DataType record)
 	
     AVLNode *prev;
 	prev = NULL;
+	
+	while(curr == NULL)
+	{
+        prev = curr;
+        if (strcmp(key, curr->key) < 0)
+		{
+            curr = curr->left;
+        }
+        else if (strcmp(key, curr->key) > 0)
+		{
+            curr = curr->right;
+        }
+        else
+		{
+            curr->data = record;
+            return false;
+        }
+    }
+	
 	// Add your implementation here
 
 	//Find node to insert into 
