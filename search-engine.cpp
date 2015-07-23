@@ -160,6 +160,7 @@ printf("\n\nurl.txt populated...\n");
 		}
 		//printf("\n");
 	}
+	fclose(file);
 	printf("word.txt populated...\n");
 }
 
@@ -276,7 +277,7 @@ SearchEngine::dispatch( FILE * fout, const char * documentRequested)
   int count2 = 0;
  // bool seen = false;
  
-  for(int m = 0; m < wordCount; m++) {
+ /* for(int m = 0; m < wordCount; m++) {
   	
   	URLRecordList * _record = (URLRecordList*)_wordToURLList->findRecord(word_list[m]);  
   	 
@@ -319,7 +320,7 @@ SearchEngine::dispatch( FILE * fout, const char * documentRequested)
     	fprintf( fout, "<blockquote>%s<p></blockquote>\n", url_list[i]->_description );
     	count2++;
     
-  }
+  }*/
 
   // Add search form at the end
   fprintf(fout, "<HR><H2>\n");
