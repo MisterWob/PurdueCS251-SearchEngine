@@ -39,8 +39,7 @@ AVLDictionary::addRecord( KeyType key, DataType record)
     n->right = NULL;
     n->parent = NULL;
     
-    if(root == NULL)
-	{
+    if(root == NULL) {
         root = n;
 		nElements++;
 		
@@ -53,39 +52,32 @@ AVLDictionary::addRecord( KeyType key, DataType record)
     AVLNode *prev;
 	prev = NULL;
 	
-	while(curr != NULL)
-	{
+	while(curr != NULL) 	{
         prev = curr;
-        if (strcmp(key, curr->key) < 0)
-		{
+        if (strcmp(key, curr->key) < 0) {
             curr = curr->left;
         }
-        else if (strcmp(key, curr->key) > 0)
-		{
+        else if (strcmp(key, curr->key) > 0) {
             curr = curr->right;
         }
-        else
-		{
+        else {
             curr->data = record;
             return false;
         }
     }
 	
 	
-	if (strcmp(key, prev->key) < 0)
-	{
+	if (strcmp(key, prev->key) < 0) {
         prev->left = n;
     }
-    else
-	{
+    else {
         prev->right = n;
     }
     
     AVLNode *m;
 	m = n->parent;
 	
-    while(m != NULL)
-	{
+    while(m != NULL) {
         int mh = 0;
         if(m->left != NULL)
             mh = m->left->height;
@@ -122,6 +114,12 @@ void
 AVLDictionary::restructure(AVLNode * n) {
 	//Balance the tree starting at n 
 
+	AVLNode *z;
+	z = n->parent;
+	
+	while(z != NULL) {
+		
+	}
 	//Go upwards until root is found
 
         // See class notes
