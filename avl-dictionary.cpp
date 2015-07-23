@@ -208,17 +208,34 @@ AVLDictionary::restructure(AVLNode * n) {
         
         AVLNode *p;
 		p = z->parent;
-        if(p == NULL)
-		{
+        if(p == NULL) {
             root = b;
         }
-        else
-		{
+        else {
             if(b->left == z)
                 p->left = b;
             else
                 p->right = b;
         }  
+        
+        b->parent = p;
+        b->left = a;
+        b->right = c;
+        a->parent = b;
+        a->left = t0;
+        a->right = t1;
+        c->parent = b;
+        c->left = t2;
+        c->right = t3;
+
+        if(t0 != NULL)
+            t0->parent = a;
+        if(t1 != NULL)
+            t1->parent = a;
+        if(t2 != NULL)
+            t2->parent = c;
+        if(t3 != NULL)
+            t3->parent = c;
             
 	}
 	
