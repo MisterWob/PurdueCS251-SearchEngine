@@ -54,7 +54,7 @@ SearchEngine::SearchEngine( int port, DictionaryType dictionaryType):
 		char * i_string = (char*) malloc(100);
 		strcpy(i_string,"");
 		char * is = i_string;
-		int index;
+		int index = 0;
 		
 		//Getting Index
 		
@@ -131,15 +131,15 @@ printf("\n\nurl.txt populated...\n");
 						
 						j = 0;
 						
-						int index = atoi(index_string);
+						int p = atoi(index_string);
 						//printf("%d ", index);
-						if(records[index]->_url == NULL) continue;
+						if(records[p]->_url == NULL) continue;
 						
 							URLRecordList * newNode = new URLRecordList();
 							
 							if(_head == NULL) _head = newNode;
 							
-							newNode->_urlRecord = records[index];
+							newNode->_urlRecord = records[p];
 							newNode->_next = NULL;
 							
 							if(_prev != NULL) _prev->_next = newNode;
@@ -278,7 +278,7 @@ SearchEngine::dispatch( FILE * fout, const char * documentRequested)
   int count2 = 0;
  // bool seen = false;
  
- /* for(int m = 0; m < wordCount; m++) {
+  for(int m = 0; m < wordCount; m++) {
   	
   	URLRecordList * _record = (URLRecordList*)_wordToURLList->findRecord(word_list[m]);  
   	 
@@ -321,7 +321,7 @@ SearchEngine::dispatch( FILE * fout, const char * documentRequested)
     	fprintf( fout, "<blockquote>%s<p></blockquote>\n", url_list[i]->_description );
     	count2++;
     
-  }*/
+  }
 
   // Add search form at the end
   fprintf(fout, "<HR><H2>\n");
