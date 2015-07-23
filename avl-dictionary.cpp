@@ -29,6 +29,15 @@ AVLDictionary::addRecord( KeyType key, DataType record)
 		printNode("", root, 0);
 	}
 	
+	AVLNode *n;
+	n = new AVLNode();
+	
+    n->key = key;
+    n->data = record;
+    n->height = 1;
+    n->left = NULL;
+    n->right = NULL;
+    n->parent = NULL;
 	// Add your implementation here
 
 	//Find node to insert into 
