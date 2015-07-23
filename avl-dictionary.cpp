@@ -80,6 +80,20 @@ AVLDictionary::addRecord( KeyType key, DataType record)
 	{
         prev->right = n;
     }
+    
+    AVLNode *m;
+	m = n->parent;
+	
+    while(m != NULL)
+	{
+        int mh = 0;
+        if(m->left != NULL)
+            mh = m->left->height;
+        if(m->right != NULL && mh < m->right->height)
+            mh = m->right->height;
+        m->height = 1+mh;
+        m = m->parent;
+    }
 	// Add your implementation here
 
 	//Find node to insert into 
