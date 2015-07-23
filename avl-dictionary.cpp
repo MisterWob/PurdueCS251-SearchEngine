@@ -114,7 +114,7 @@ AVLDictionary::addRecord( KeyType key, DataType record)
 		printf("---------- After Restructure -----------------\n");
 		printNode("", root, 0);
 	}
-		
+	nElements++;
 	return true;
 }
 
