@@ -276,7 +276,7 @@ SearchEngine::dispatch( FILE * fout, const char * documentRequested)
   URLRecord ** url_list = new URLRecord * [500];
   int count1 = 0;
   int count2 = 0;
- // bool seen = false;
+  
  
   for(int m = 0; m < wordCount; m++) {
   	
@@ -286,18 +286,18 @@ SearchEngine::dispatch( FILE * fout, const char * documentRequested)
   	 while(_record != NULL) {
   	 	
   	 	
-  	 	int seen = 0;
-  	 	
+  	 	//int seen = 0;
+  	 	bool seen = false;
   	 	for(int j = 0; j < count1; j++) {
   	 		
   	 		if(url_list[j] == _record->_urlRecord) {// Make changes to add better check
-  	 			seen = 1;
+  	 			seen = true;
   	 			break;
   	 		}
   	 		
   	 	}
   	 	
-  	 	if(seen == 0) {
+  	 	if(seen == false) {
   	 		url_list[count1] = _record->_urlRecord;
   	 		count1++;
   	 	}
