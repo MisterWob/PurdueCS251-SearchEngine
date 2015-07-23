@@ -159,7 +159,7 @@ AVLDictionary::restructure(AVLNode * n) {
             maxheight = x->height;
         }
         
-        
+        assert(x != NULL);
 	}
 	
 	
