@@ -175,8 +175,9 @@ SearchEngine::dispatch( FILE * fout, const char * documentRequested)
     fprintf(fout, "<CENTER><H1><em><font color=\"green\">Search</font> <CENTER><font color=\"blue\">v1.0</font></em></H1>\n");
     fprintf(fout, "<H2>\n");
     fprintf(fout, "<FORM ACTION=\"search\">\n");
-    fprintf(fout, "Search: \nmax search terms = 500<br>\n");
+    fprintf(fout, "Search:\n");
     fprintf(fout, "<INPUT TYPE=\"text\" NAME=\"word\" MAXLENGTH=\"1000\"><P>\n");
+    fprintf(fout, "<p>&reg;Yash Shiroya | 2015</p>");
     fprintf(fout, "</H2>\n");
     fprintf(fout, "</FORM></CENTER>\n");
     return;
