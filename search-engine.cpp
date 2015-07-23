@@ -255,7 +255,7 @@ SearchEngine::dispatch( FILE * fout, const char * documentRequested)
   }
   
   for(int i = 0; i < wordCount; i++) {
- 		 printf("word: %s\n", word_list[wordCount]);
+ 		 printf("word: %s\n", word_list[i]);
   }
   //____________________________________________________
   
