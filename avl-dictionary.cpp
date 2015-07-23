@@ -113,8 +113,7 @@ AVLDictionary::addRecord( KeyType key, DataType record)
 	return true;
 }
 
-void
-AVLDictionary::restructure(AVLNode * n) {
+void AVLDictionary::restructure(AVLNode * n) {
 	//Balance the tree starting at n 
 
 	AVLNode *z;
@@ -152,7 +151,7 @@ AVLDictionary::restructure(AVLNode * n) {
         
         if(z->right != NULL && z->right->height > mh) {
             y = z->right;
-            mh = y->height;
+            mh = z->height;
         }
         
         AVLNode *x = NULL;
