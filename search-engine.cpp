@@ -125,12 +125,15 @@ printf("\n\nurl.txt populated...\n");
 				}
 				else {
 					if(j > 0) {
+						
 						index_string[j] = '\0';
+						
 						j = 0;
 						
 						int index = atoi(index_string);
 						//printf("%d ", index);
-						if(records[index]->_url != NULL) {
+						if(records[index]->_url == NULL) continue;
+						
 							URLRecordList * newNode = new URLRecordList();
 							
 							if(_head == NULL) _head = newNode;
@@ -138,14 +141,13 @@ printf("\n\nurl.txt populated...\n");
 							newNode->_urlRecord = records[index];
 							newNode->_next = NULL;
 							
-							if(_prev != NULL) {
-								_prev->_next = newNode;
-							}
+							if(_prev != NULL) _prev->_next = newNode;
+							
 							
 							_prev = newNode;
 							
-						}
-						else continue;
+						
+						
 						
 					}
 				}
@@ -308,6 +310,7 @@ SearchEngine::dispatch( FILE * fout, const char * documentRequested)
   for ( int i = 0; i < count1; i++ ) {
   
   if(url_list[i] == NULL) continue;
+  
     	fprintf( fout, "<h3>%d. <a href=\"%s\">%s</a><h3>\n", count2+1, url_list[i]->_url, url_list[i]->_url );
     	fprintf( fout, "<blockquote>%s<p></blockquote>\n", url_list[i]->_description );
     	count2++;
