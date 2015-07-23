@@ -337,7 +337,7 @@ SearchEngine::dispatch( FILE * fout, const char * documentRequested)
   if(url_list[i] == NULL) continue;
   
     	fprintf( fout, "<h3>%d. <a href=\"%s\">%s</a><h3>\n", count2+1, url_list[i]->_url, url_list[i]->_url );
-    	fprintf( fout, "<font color=\"gray\" font face=\"Courier New\">%s</font><p>\n", url_list[i]->_description);
+    	fprintf( fout, "<font color=\"gray\" font face=\"Andale Mono\">%s</font><p>\n", url_list[i]->_description);
     	count2++;
     
   }
