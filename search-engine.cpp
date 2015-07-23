@@ -276,7 +276,7 @@ SearchEngine::dispatch( FILE * fout, const char * documentRequested)
 
   fprintf( fout, "<TITLE>Search Results</TITLE>\r\n");
   fprintf(fout, "<BODY background=\"http://www.imgbase.info/images/safe-wallpapers/miscellaneous/1_other_wallpapers/7628_1_other_wallpapers_simple.jpg\">\n");
-  fprintf( fout, " <Center><font color =\"#E89619\">Quadro Search</font>\n");
+  fprintf( fout, "<H1> <Center>Boiler Search</H1>\n");
   fprintf( fout, "<H2> Search Results for \"%s\"</center></H2>\n", cat_string );
   //fprintf(fout, "</BODY>");
 
@@ -341,7 +341,7 @@ SearchEngine::dispatch( FILE * fout, const char * documentRequested)
   
   if(url_list[i] == NULL) continue;
   
-    	fprintf( fout, "<h3>%d. <a href=\"%s\"><font face=\"Helvetica\">%s</font></a><h3>\n", count2+1, url_list[i]->_url, url_list[i]->_url );
+    	fprintf( fout, "<h3>%d. <a href=\"%s\"> <font face=\"Helvetica\">%s</font></a><h3>\n", count2+1, url_list[i]->_url, url_list[i]->_url );
     	fprintf( fout, "<font color=\"white\" font face=\"Helvetica\">%s</font><p>\n", url_list[i]->_description);
     	count2++;
     
