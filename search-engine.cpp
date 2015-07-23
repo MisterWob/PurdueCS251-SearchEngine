@@ -6,7 +6,7 @@
 
 DictionaryType dt;
 int maxURLs = 1000;
-
+int maxWords = 500;
 int port_href;
 
 SearchEngine::SearchEngine( int port, DictionaryType dictionaryType):
@@ -214,10 +214,10 @@ SearchEngine::dispatch( FILE * fout, const char * documentRequested)
   char * w = word;
   
   //printf("search: %s\n",word);
+ 
+  char ** word_list = new char*[maxWords]; 
   
-  char ** word_list = new char*[500]; 
-  
-  for(int i = 0; i < 500; i++) {
+  for(int i = 0; i < maxWords; i++) {
   	word_list[i] = NULL;
   }
   
