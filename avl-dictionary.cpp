@@ -154,11 +154,12 @@ AVLDictionary::restructure(AVLNode * n) {
         
         AVLNode *x = NULL;
         maxheight = 0;
-        if(y->left != NULL)
-		{
+        if(y->left != NULL) {
             x = y->left;
             maxheight = x->height;
         }
+        
+        
 	}
 	
 	
