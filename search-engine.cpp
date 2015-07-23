@@ -187,6 +187,7 @@ SearchEngine::dispatch( FILE * fout, const char * documentRequested)
 		return;
 	
 	// extract query string
+	
 	char *param = new char[strlen(documentRequested)];
 	strcpy(param, documentRequested+13);
 
@@ -239,8 +240,8 @@ SearchEngine::dispatch( FILE * fout, const char * documentRequested)
 	int counter;
 	counter = 0;
 	
-	int listCount;
-	listCount = 0;
+	int counter1;
+	counter1 = 0;
 	
 	URLRecord **list = new URLRecord*[500];
 	
@@ -248,34 +249,33 @@ SearchEngine::dispatch( FILE * fout, const char * documentRequested)
 	
 	for (i = 0; i < numWords; i++)
 	{
-		URLRecordList* data;
-		data = (URLRecordList*)_wordToURLList->findRecord(words[i]);
-		
-		while (data != NULL)
-		{
-			int exists = 0;
-			
-			int j;
-			for (j = 0; j < listCount; j++)
-			{
-				if (list[j] == data->_urlRecord)
-				{
-					exists = 1;
-					break;
-				}
-			}
-			
-			if (exists == 0)
-			{
-				list[listCount] = data->_urlRecord;
-				listCount++;
-			}
-			
-			data = data->_next;
-		}
+		URLRecordList * data = (URLRecordList*)_wordToURLList->findRecord(words[i]);  
+  	 
+  	 
+  	 while(data != NULL) {
+  	 	
+  	 	
+  	 	int exists = 0;
+  	 	
+  	 	for(int j = 0; j < counter1; j++) {
+  	 		
+  	 		if(list[j] == data->_urlRecord) {// Make changes to add better check
+  	 			exists = 1;
+  	 			break;
+  	 		}
+  	 		
+  	 	}
+  	 	
+  	 	if(exists == 0) {
+  	 		list[counter1] = data->_urlRecord;
+  	 		counter1++;
+  	 	}
+  	 	data = data->_next;	
+  	 	
+  	 }
 	}
 	
-	for (i = 0; i < listCount; i++)
+	/*for (i = 0; i < listCount; i++)
 	{
 		int j;
 		for (j = 0; j < numWords; j++)
@@ -298,10 +298,10 @@ SearchEngine::dispatch( FILE * fout, const char * documentRequested)
 			if (exists == 0)
 				list[i] = NULL;
 		}
-	}
+	}*/
 		
 	
-	for (i = 0; i < listCount; i++)
+	for (i = 0; i < counter1; i++)
 	{
 		if (list[i] == NULL) continue;
 		
