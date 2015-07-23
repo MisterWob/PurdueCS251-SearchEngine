@@ -306,13 +306,24 @@ SearchEngine::dispatch( FILE * fout, const char * documentRequested)
   	 	
   	 }
   }
-    for ( int i = 0; i < count1; i++ ) {
-    	//if(url_list[i] == NULL) continue;
-    	printf("url: %s\n", url_list[i]->_url);
-    }
   
-  
-  
+  for(int i = 0; i < count1; i++) {
+  	for(int j = 0; j < wordCount; j++) {
+  		URLRecordList * _record = (URLRecordList*)_wordToURLList->findRecord(word_list[j]);
+  		bool seen = false;
+  		
+  		while(_record != NULL) {
+  			if(_record->_urlRecord == url_list[i]) {
+  				seen = true;
+  			}
+  			_record = _record->_next;
+  		}
+  		
+  		if(seen == false) {
+  			word_list[i] = NULL;
+  		}	
+  	}
+  }
   //int _index = 0;
 
   for ( int i = 0; i < count1; i++ ) {
@@ -320,7 +331,7 @@ SearchEngine::dispatch( FILE * fout, const char * documentRequested)
   if(url_list[i] == NULL) continue;
   
     	fprintf( fout, "<h3>%d. <a href=\"%s\">%s</a><h3>\n", count2+1, url_list[i]->_url, url_list[i]->_url );
-    	fprintf( fout, "<blockquote>%s, yolapuram<p></blockquote>\n", url_list[i]->_description);
+    	fprintf( fout, "<blockquote>%s<p></blockquote>\n", url_list[i]->_description);
     	count2++;
     
   }
