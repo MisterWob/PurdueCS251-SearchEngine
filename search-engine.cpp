@@ -272,7 +272,7 @@ SearchEngine::dispatch( FILE * fout, const char * documentRequested)
   //fprintf( stderr, "Search for words: \"%s\"\n", words);
 
   fprintf( fout, "<TITLE>Search Results</TITLE>\r\n");
-  fprintf( fout, "<H1> <Center><em>Boiler Search</em></H1>\n");
+  fprintf( fout, "<H1> <Center>Boiler Search</H1>\n");
   fprintf( fout, "<H2> Search Results for \"%s\"</center></H2>\n", cat_string );
 
   URLRecord ** url_list = new URLRecord * [500];
@@ -337,7 +337,7 @@ SearchEngine::dispatch( FILE * fout, const char * documentRequested)
   if(url_list[i] == NULL) continue;
   
     	fprintf( fout, "<h3>%d. <a href=\"%s\">%s</a><h3>\n", count2+1, url_list[i]->_url, url_list[i]->_url );
-    	fprintf( fout, "<i>%s<p></i>\n", url_list[i]->_description);
+    	fprintf( fout, "<i><font color=\"gray\" font face=\"Helvetica\">%s</font><p></i>\n", url_list[i]->_description);
     	count2++;
     
   }
