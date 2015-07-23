@@ -74,6 +74,8 @@ AVLDictionary::addRecord( KeyType key, DataType record)
         prev->right = n;
     }
     
+    n->parent = prev; //_____
+    
     AVLNode *m;
 	m = n->parent;
 	
