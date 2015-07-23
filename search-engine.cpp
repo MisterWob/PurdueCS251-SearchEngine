@@ -271,14 +271,14 @@ SearchEngine::dispatch( FILE * fout, const char * documentRequested)
   URLRecord ** url_list = new URLRecord * [maxURLs];
   int count1 = 0;
   int count2 = 0;
-  bool seen =false;
+  bool seen = false;
  
   for(int i = 0; i < wordCount; i++) {
   	
   	URLRecordList * _record = (URLRecordList*)_wordToURLList->findRecord(word_list[i]);  
   	 
   	 while(_record != NULL) {
-  	 	URLRecordList * _next = _record->_next;
+  	 	
   	 	seen = false;
   	 	
   	 	for(int j = 0; j < count1; j++) {
@@ -294,14 +294,16 @@ SearchEngine::dispatch( FILE * fout, const char * documentRequested)
   	 		url_list[count1] = _record->_urlRecord;
   	 		count1++;
   	 	}
-  	 	_record = _next;	
+  	 	_record = _record->_next;	
   	 	
   	 }
   }
   
+  
+  
   int _index = 0;
 
-  for ( int i = 0; i < wordCount; i++ ) {
+  for ( int i = 0; i < count1; i++ ) {
   
   if(url_list[i] == NULL) continue;
     	fprintf( fout, "<h3>%d. <a href=\"%s\">%s</a><h3>\n", _index+1, url_list[i]->_url, url_list[i]->_url );
