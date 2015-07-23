@@ -46,6 +46,12 @@ AVLDictionary::addRecord( KeyType key, DataType record)
 		
         return true;
     }
+    
+    AVLNode *curr;
+	curr = root;
+	
+    AVLNode *prev;
+	prev = NULL;
 	// Add your implementation here
 
 	//Find node to insert into 
