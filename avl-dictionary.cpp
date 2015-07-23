@@ -160,6 +160,52 @@ AVLDictionary::restructure(AVLNode * n) {
         }
         
         assert(x != NULL);
+        
+        AVLNode * a, * b, * c, * t0, * t1, * t2, * t3;
+        if(z->right == y) {
+            if(y->right == x) {
+                a = z;
+                b = y;
+                c = x;
+                t0 = z->left;
+                t1 = y->left;
+                t2 = x->left;
+                t3 = x->right;
+            }
+            
+            else {
+                a = z;
+                b = x;
+                c = y;
+                t0 = z->left;
+                t1 = x->left;
+                t2 = y->left;
+                t3 = y->right;
+            }
+            
+        }
+        
+           else {
+            if(y->left == x) {
+                a = z;
+                b = y;
+                c = z;
+                t0 = x->left;
+                t1 = x->right;
+                t2 = y->right;
+                t3 = z->right;
+            }
+            else {
+                a = y;
+                b = x;
+                c = z;
+                t0 = y->left;
+                t1 = x->left;
+                t2 = x->right;
+                t3 = z->right;
+            }
+        }  
+            
 	}
 	
 	
