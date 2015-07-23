@@ -159,11 +159,7 @@ AVLDictionary::restructure(AVLNode * n) {
             x = y->left;
             mh = x->height;
         }
-        
-        if(y->left != NULL) {
-            x = y->left;
-            mh = x->height;
-        }
+
         if(y->right != NULL && y->right->height > mh) {
             x = y->right;
             mh = x->height;
