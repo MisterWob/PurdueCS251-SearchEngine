@@ -155,7 +155,6 @@ printf("\n\nurl.txt populated...\n");
 			}
 			
 			_wordToURLList->addRecord(word, (URLRecordList*)_head);
-			printf("word %s\n", word);
 			//_________________________________________________________
 						
 		}
@@ -221,7 +220,7 @@ SearchEngine::dispatch( FILE * fout, const char * documentRequested)
   printf("\n");
   int ch;
   
-  char word_ext[50]; int i = 0;
+  char word_ext[50]; int l = 0;
   
   char * cat_string = (char*) malloc(1000);
   strcpy(cat_string,"");
@@ -229,13 +228,13 @@ SearchEngine::dispatch( FILE * fout, const char * documentRequested)
   
   while((ch = *w) != '\0') {
   	if(ch != '+') {
-	        word_ext[i++] = ch;
+	        word_ext[l++] = ch;
 	}
 	else {
 		//w++;
-		if(i > 0) {
-	        word_ext[i] = '\0';
-	        i = 0;
+		if(l > 0) {
+	        word_ext[l] = '\0';
+	        l = 0;
 			word_list[wordCount] = strdup(word_ext);
 			//printf("word: %s\n", word_list[wordCount]);
 			strcat(cat_string, word_ext);
@@ -248,8 +247,8 @@ SearchEngine::dispatch( FILE * fout, const char * documentRequested)
   
   //Getting last word out
   if(ch == '\0') {
-  		word_ext[i] = '\0';
-	    i = 0;
+  		word_ext[l] = '\0';
+	    l = 0;
 		word_list[wordCount] = strdup(word_ext);
 		//printf("word: %s\n", word_list[wordCount]);
 		strcat(cat_string, word_ext);
@@ -304,7 +303,10 @@ SearchEngine::dispatch( FILE * fout, const char * documentRequested)
   	 	
   	 }
   }
-  
+    for ( int i = 0; i < count1; i++ ) {
+    	//if(url_list[i] == NULL) continue;
+    	printf("url: %s\n", url_list[i]->_url);
+    }
   
   
   //int _index = 0;
