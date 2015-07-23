@@ -7,6 +7,8 @@
 DictionaryType dt;
 int maxURLs = 1000;
 
+int port_href;
+
 SearchEngine::SearchEngine( int port, DictionaryType dictionaryType):
   MiniHTTPD(port)
 {
@@ -337,11 +339,12 @@ SearchEngine::dispatch( FILE * fout, const char * documentRequested)
   if(url_list[i] == NULL) continue;
   
     	fprintf( fout, "<h3>%d. <a href=\"%s\">%s</a><h3>\n", count2+1, url_list[i]->_url, url_list[i]->_url );
-    	fprintf( fout, "<font color=\"gray\" font face=\"Andale Mono\">%s</font><p>\n", url_list[i]->_description);
+    	fprintf( fout, "<font color=\"gray\" font face=\"Helvetica\">%s</font><p>\n", url_list[i]->_description);
     	count2++;
     
   }
 
+	fprintf(fout, "<h3><a href=\"http://data.cs.purdue.edu:%d/\"></a><h3>\n", port_href);
   // Add search form at the end
   fprintf(fout, "<HR><H2>\n");
   fprintf(fout, "<FORM ACTION=\"search\">\n");
@@ -373,7 +376,7 @@ int main(int argc, char ** argv)
   // Get port
   int port;
   sscanf( argv[1], "%d", &port);
-
+  port_href = port;
   // Get DictionaryType
   const char * dictType = argv[2];
   DictionaryType dictionaryType;
