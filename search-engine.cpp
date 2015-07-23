@@ -254,7 +254,7 @@ SearchEngine::dispatch( FILE * fout, const char * documentRequested)
 		word_list[wordCount] = strdup(word_ext);
 		//printf("word: %s\n", word_list[wordCount]);
 		strcat(cat_string, word_ext);
-		//wordCount++;
+		wordCount++;
   }
   
  
