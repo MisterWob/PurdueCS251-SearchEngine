@@ -204,6 +204,20 @@ AVLDictionary::restructure(AVLNode * n) {
                 t2 = x->right;
                 t3 = z->right;
             }
+        }
+        
+        AVLNode *p;
+		p = z->parent;
+        if(p == NULL)
+		{
+            root = b;
+        }
+        else
+		{
+            if(b->left == z)
+                p->left = b;
+            else
+                p->right = b;
         }  
             
 	}
