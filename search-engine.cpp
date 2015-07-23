@@ -172,7 +172,7 @@ SearchEngine::dispatch( FILE * fout, const char * documentRequested)
    if (strcmp(documentRequested, "/")==0) {
     // Send initial form
     fprintf(fout, "<TITLE>Search v1.0</TITLE>\r\n");
-    fprintf(fout, "<CENTER><H1><em><font color=\"green\" font face=\"Helvetica\">Search</font> <CENTER><font color=\"blue\">v1.0</font></em></H1>\n");
+    fprintf(fout, "<CENTER><H1><font color=\"green\" font face=\"Helvetica\">Search</font> <CENTER><font color=\"blue\" font face=\"Helvetica\">v1.0</font></H1>\n");
     fprintf(fout, "<H2>\n");
     fprintf(fout, "<FORM ACTION=\"search\">\n");
     fprintf(fout, "Search:\n");
