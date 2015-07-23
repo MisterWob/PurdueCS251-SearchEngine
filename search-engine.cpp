@@ -171,8 +171,8 @@ SearchEngine::dispatch( FILE * fout, const char * documentRequested)
 
    if (strcmp(documentRequested, "/")==0) {
     // Send initial form
-    fprintf(fout, "<TITLE>CS251 Search</TITLE>\r\n");
-    fprintf(fout, "<CENTER><H1><em><font color=\"green\">Boiler</font> <CENTER><H1><em><font color=\"blue\">Search</font></em></H1>\n");
+    fprintf(fout, "<TITLE>Search v1.0</TITLE>\r\n");
+    fprintf(fout, "<CENTER><H1><em><font color=\"green\">Search</font> <CENTER><font color=\"blue\">v1.0</font></em></H1>\n");
     fprintf(fout, "<H2>\n");
     fprintf(fout, "<FORM ACTION=\"search\">\n");
     fprintf(fout, "Search: \nmax search terms = 500<br>\n");
