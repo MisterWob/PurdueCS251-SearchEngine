@@ -141,22 +141,22 @@ AVLDictionary::restructure(AVLNode * n) {
    		 }
    		 
    		 AVLNode *y = NULL;
-        int maxheight = 0;
+        int mh = 0;
         if(z->left != NULL) {
             y = z->left;
-            maxheight = y->height;
+            mh = y->height;
         }
         
-        if(z->right != NULL && z->right->height > maxheight) {
+        if(z->right != NULL && z->right->height > mh) {
             y = z->right;
-            maxheight = y->height;
+            mh = y->height;
         }
         
         AVLNode *x = NULL;
-        maxheight = 0;
+        mh = 0;
         if(y->left != NULL) {
             x = y->left;
-            maxheight = x->height;
+            mh = x->height;
         }
         
         assert(x != NULL);
@@ -233,25 +233,25 @@ AVLDictionary::restructure(AVLNode * n) {
         if(t2 != NULL) t2->parent = c;
         if(t3 != NULL) t3->parent = c;
             
-            maxheight = 0;
-        if(a->left != NULL) maxheight = a->left->height;
-        if(a->right != NULL && a->right->height > maxheight) {
-            maxheight = a->right->height;
+            mh = 0;
+        if(a->left != NULL) mh = a->left->height;
+        if(a->right != NULL && a->right->height > mh) {
+            mh = a->right->height;
         }
-        a->height = 1+maxheight;
+        a->height = 1+mh;
         
-        maxheight = 0;
-        if(c->left != NULL) maxheight = c->left->height;
-        if(c->right != NULL && c->right->height > maxheight) maxheight = c->right->height;
-        c->height = 1+maxheight;
+        mh = 0;
+        if(c->left != NULL) mh = c->left->height;
+        if(c->right != NULL && c->right->height > mh) mh = c->right->height;
+        c->height = 1+mh;
 
-        maxheight = 0;
+        mh = 0;
         
-        if(b->left != NULL)
-            maxheight = b->left->height;
-        if(b->right != NULL && b->right->height > maxheight)
-            maxheight = b->right->height;
-        b->height = 1+maxheight;
+        if(b->left != NULL) mh = b->left->height;
+        if(b->right != NULL && b->right->height > mh) mh = b->right->height;
+        b->height = 1+mh;
+        
+        z = p;
             
 	}
 	
