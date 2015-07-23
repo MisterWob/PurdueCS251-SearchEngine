@@ -254,15 +254,13 @@ SearchEngine::dispatch( FILE * fout, const char * documentRequested)
 		wordCount++;
   }
   
-  for(int i = 0; i < wordCount; i++) {
- 		 printf("word: %s\n", word_list[i]);
-  }
+ 
   //____________________________________________________
   
   //_________________________________________________________________
 //printf("cat_string %s\n", cat_string);
     
-  const int nurls=2;
+  //const int nurls=2;
 
   const char * words = "data structures";
 
@@ -272,18 +270,18 @@ SearchEngine::dispatch( FILE * fout, const char * documentRequested)
   fprintf( fout, "<H1> <Center><em>Boiler Search</em></H1>\n");
   fprintf( fout, "<H2> Search Results for \"%s\"</center></H2>\n", words );
 
-  URLRecord ** url_list = new URLRecord * [maxURLs];
+  URLRecord ** url_list = new URLRecord * [500];
   int count1 = 0;
   int count2 = 0;
-  bool seen = false;
+ // bool seen = false;
  
-  for(int i = 0; i < wordCount; i++) {
+  for(int m = 0; m < wordCount; m++) {
   	
-  	URLRecordList * _record = (URLRecordList*)_wordToURLList->findRecord(word_list[i]);  
+  	URLRecordList * _record = (URLRecordList*)_wordToURLList->findRecord(word_list[m]);  
   	 
   	 while(_record != NULL) {
   	 	
-  	 	seen = false;
+  	 	bool seen = false;
   	 	
   	 	for(int j = 0; j < count1; j++) {
   	 		
@@ -294,7 +292,7 @@ SearchEngine::dispatch( FILE * fout, const char * documentRequested)
   	 		
   	 	}
   	 	
-  	 	if(seen != true) {
+  	 	if(seen == false) {
   	 		url_list[count1] = _record->_urlRecord;
   	 		count1++;
   	 	}
@@ -305,14 +303,14 @@ SearchEngine::dispatch( FILE * fout, const char * documentRequested)
   
   
   
-  int _index = 0;
+  //int _index = 0;
 
   for ( int i = 0; i < count1; i++ ) {
   
   if(url_list[i] == NULL) continue;
-    	fprintf( fout, "<h3>%d. <a href=\"%s\">%s</a><h3>\n", _index+1, url_list[i]->_url, url_list[i]->_url );
+    	fprintf( fout, "<h3>%d. <a href=\"%s\">%s</a><h3>\n", count2+1, url_list[i]->_url, url_list[i]->_url );
     	fprintf( fout, "<blockquote>%s<p></blockquote>\n", url_list[i]->_description );
-    	_index++;
+    	count2++;
     
   }
 
