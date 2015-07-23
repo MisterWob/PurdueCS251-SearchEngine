@@ -159,6 +159,15 @@ AVLDictionary::restructure(AVLNode * n) {
             mh = x->height;
         }
         
+        if(y->left != NULL) {
+            x = y->left;
+            mh = x->height;
+        }
+        if(y->right != NULL && y->right->height > mh) {
+            x = y->right;
+            mh = x->height;
+        }
+        
         assert(x != NULL);
         
         AVLNode * a, * b, * c, * t0, * t1, * t2, * t3;
