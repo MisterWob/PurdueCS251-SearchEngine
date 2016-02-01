@@ -1,0 +1,1095 @@
+[master (root-commit) 41691c6] Commit search engine
+ Committer: CS251 Account <cs251@data.cs.purdue.edu>
+Your name and email address were configured automatically based
+on your username and hostname. Please check that they are accurate.
+You can suppress this message by setting them explicitly:
+
+    git config --global user.name "Your Name"
+    git config --global user.email you@example.com
+
+After doing this, you may fix the identity used for this commit with:
+
+    git commit --amend --reset-author
+
+ 18 files changed, 1463 insertions(+)
+ create mode 100644 Makefile
+ create mode 100644 array-dictionary.cpp
+ create mode 100644 array-dictionary.h
+ create mode 100644 avl-dictionary.cpp
+ create mode 100644 avl-dictionary.h
+ create mode 100644 avl-dictionary2.cpp
+ create mode 100644 bsearch-dictionary.cpp
+ create mode 100644 bsearch-dictionary.h
+ create mode 100644 dictionary.h
+ create mode 100644 hash-dictionary.cpp
+ create mode 100644 hash-dictionary.h
+ create mode 100644 minihttpd.cpp
+ create mode 100644 minihttpd.h
+ create mode 100644 search-engine.cpp
+ create mode 100644 search-engine.h
+ create mode 100644 test-avl.cpp
+ create mode 100644 test-dict.cpp
+ create mode 100644 webcrawl.h
+On branch master
+Untracked files:
+	#avl-dictionary2.cpp#
+	.local.git.out
+	Makefile~
+	array-dictionary.o
+	avl-dictionary.cpp~
+	avl-dictionary.h~
+	avl-dictionary.o
+	avl-dictionary2.cpp~
+	avl-dictionary2.o
+	bsearch-dictionary.o
+	data
+	hash-dictionary.o
+	lab4-test
+	left
+	minihttpd.cpp~
+	minihttpd.o
+	right
+	search-engine
+	search-engine.cpp~
+	search-engine.o
+	test-avl
+	test-avl.cpp~
+	test-dict
+	test-dict.cpp~
+	testall
+
+nothing added to commit but untracked files present
+[master 4fa1887] Commit search engine
+ Committer: CS251 Account <cs251@data.cs.purdue.edu>
+Your name and email address were configured automatically based
+on your username and hostname. Please check that they are accurate.
+You can suppress this message by setting them explicitly:
+
+    git config --global user.name "Your Name"
+    git config --global user.email you@example.com
+
+After doing this, you may fix the identity used for this commit with:
+
+    git commit --amend --reset-author
+
+ 1 file changed, 2 insertions(+), 2 deletions(-)
+On branch master
+Untracked files:
+	#avl-dictionary2.cpp#
+	.local.git.out
+	Makefile~
+	array-dictionary.o
+	avl-dictionary.cpp~
+	avl-dictionary.h~
+	avl-dictionary.o
+	avl-dictionary2.cpp~
+	avl-dictionary2.o
+	bsearch-dictionary.o
+	data
+	hash-dictionary.o
+	lab4-test
+	left
+	minihttpd.cpp~
+	minihttpd.o
+	right
+	search-engine
+	search-engine.cpp~
+	search-engine.o
+	test-avl
+	test-avl.cpp~
+	test-dict
+	test-dict.cpp~
+	testall
+
+nothing added to commit but untracked files present
+On branch master
+Untracked files:
+	#avl-dictionary2.cpp#
+	.local.git.out
+	Makefile~
+	array-dictionary.o
+	avl-dictionary.cpp~
+	avl-dictionary.h~
+	avl-dictionary.o
+	avl-dictionary2.cpp~
+	avl-dictionary2.o
+	bsearch-dictionary.o
+	data
+	hash-dictionary.o
+	lab4-test
+	left
+	minihttpd.cpp~
+	minihttpd.o
+	right
+	search-engine
+	search-engine.cpp~
+	search-engine.o
+	test-avl
+	test-avl.cpp~
+	test-dict
+	test-dict.cpp~
+	testall
+
+nothing added to commit but untracked files present
+On branch master
+Untracked files:
+	#avl-dictionary2.cpp#
+	.local.git.out
+	Makefile~
+	array-dictionary.o
+	avl-dictionary.cpp~
+	avl-dictionary.h~
+	avl-dictionary.o
+	avl-dictionary2.cpp~
+	avl-dictionary2.o
+	bsearch-dictionary.o
+	data
+	hash-dictionary.o
+	lab4-test
+	left
+	minihttpd.cpp~
+	minihttpd.o
+	right
+	search-engine
+	search-engine.cpp~
+	search-engine.o
+	test-avl
+	test-avl.cpp~
+	test-dict
+	test-dict.cpp~
+	testall
+
+nothing added to commit but untracked files present
+On branch master
+Untracked files:
+	#avl-dictionary2.cpp#
+	.local.git.out
+	Makefile~
+	array-dictionary.o
+	avl-dictionary.cpp~
+	avl-dictionary.h~
+	avl-dictionary.o
+	avl-dictionary2.cpp~
+	avl-dictionary2.o
+	bsearch-dictionary.o
+	data
+	hash-dictionary.o
+	lab4-test
+	left
+	minihttpd.cpp~
+	minihttpd.o
+	right
+	search-engine
+	search-engine.cpp~
+	search-engine.o
+	test-avl
+	test-avl.cpp~
+	test-dict
+	test-dict.cpp~
+	testall
+
+nothing added to commit but untracked files present
+On branch master
+Untracked files:
+	#avl-dictionary2.cpp#
+	.local.git.out
+	Makefile~
+	array-dictionary.o
+	avl-dictionary.cpp~
+	avl-dictionary.h~
+	avl-dictionary.o
+	avl-dictionary2.cpp~
+	avl-dictionary2.o
+	bsearch-dictionary.o
+	data
+	hash-dictionary.o
+	lab4-test
+	left
+	minihttpd.cpp~
+	minihttpd.o
+	right
+	search-engine
+	search-engine.cpp~
+	search-engine.o
+	test-avl
+	test-avl.cpp~
+	test-dict
+	test-dict.cpp~
+	testall
+
+nothing added to commit but untracked files present
+On branch master
+Untracked files:
+	.local.git.out
+	array-dictionary.o
+	avl-dictionary.o
+	avl-dictionary2.o
+	bsearch-dictionary.o
+	data
+	hash-dictionary.o
+	left
+	minihttpd.o
+	right
+	search-engine
+	search-engine.o
+	test-avl
+	test-dict
+	testall
+
+nothing added to commit but untracked files present
+On branch master
+Untracked files:
+	.local.git.out
+	array-dictionary.o
+	avl-dictionary.o
+	avl-dictionary2.o
+	bsearch-dictionary.o
+	data
+	hash-dictionary.o
+	left
+	minihttpd.o
+	right
+	search-engine
+	search-engine.o
+	test-avl
+	test-dict
+	testall
+
+nothing added to commit but untracked files present
+On branch master
+Untracked files:
+	.local.git.out
+	array-dictionary.o
+	avl-dictionary.o
+	avl-dictionary2.o
+	bsearch-dictionary.o
+	data
+	hash-dictionary.o
+	left
+	minihttpd.o
+	right
+	search-engine
+	search-engine.o
+	test-avl
+	test-dict
+	testall
+
+nothing added to commit but untracked files present
+[master a426128] Commit search engine
+ Committer: CS251 Account <cs251@data.cs.purdue.edu>
+Your name and email address were configured automatically based
+on your username and hostname. Please check that they are accurate.
+You can suppress this message by setting them explicitly:
+
+    git config --global user.name "Your Name"
+    git config --global user.email you@example.com
+
+After doing this, you may fix the identity used for this commit with:
+
+    git commit --amend --reset-author
+
+ 2 files changed, 2 insertions(+), 1 deletion(-)
+ create mode 100644 testall.out
+[master 5b8273d] Commit search engine
+ 2 files changed, 15 insertions(+)
+[master 1455067] Commit search engine
+ 1 file changed, 16 insertions(+), 1 deletion(-)
+[master decb6a8] Commit search engine
+ 1 file changed, 11 insertions(+)
+[master 8bfb0a3] Commit search engine
+ 1 file changed, 7 insertions(+), 1 deletion(-)
+[master 4964bd4] Commit search engine
+ 2 files changed, 18 insertions(+), 1 deletion(-)
+[master 35d72d9] Commit search engine
+ 2 files changed, 11 insertions(+), 7 deletions(-)
+[master 0e73972] Commit search engine
+ 1 file changed, 1 insertion(+)
+[master 5825bd3] Commit search engine
+ 1 file changed, 2 insertions(+), 2 deletions(-)
+[master 4d2e8b4] Commit search engine
+ 2 files changed, 8 insertions(+), 1 deletion(-)
+[master efc157c] Commit search engine
+ 2 files changed, 41 insertions(+), 1 deletion(-)
+[master e013dd0] Commit search engine
+ 2 files changed, 7 insertions(+), 11 deletions(-)
+[master f6dcb42] Commit search engine
+ 1 file changed, 1 insertion(+)
+[master e54bc1f] Commit search engine
+ 1 file changed, 3 insertions(+)
+[master a3efc66] Commit search engine
+ 1 file changed, 18 insertions(+)
+[master 3e374dd] Commit search engine
+ 2 files changed, 11 insertions(+)
+[master 805a070] Commit search engine
+ 2 files changed, 3 insertions(+), 2 deletions(-)
+[master b4d799f] Commit search engine
+ 1 file changed, 2 insertions(+)
+[master 3b58eb3] Commit search engine
+ 2 files changed, 22 insertions(+), 1 deletion(-)
+[master 06d7b51] Commit search engine
+ 3 files changed, 50 insertions(+), 2 deletions(-)
+[master d11de16] Commit search engine
+ 1 file changed, 26 insertions(+), 15 deletions(-)
+[master 83afb00] Commit search engine
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+[master dd6f0c3] Commit search engine
+ 2 files changed, 40 insertions(+), 3 deletions(-)
+On branch master
+Untracked files:
+	.local.git.out
+	array-dictionary.o
+	avl-dictionary.o
+	avl-dictionary2.o
+	bsearch-dictionary.o
+	data
+	hash-dictionary.o
+	left
+	minihttpd.o
+	right
+	search-engine
+	search-engine.o
+	test-avl
+	test-dict
+	testall
+
+nothing added to commit but untracked files present
+On branch master
+Untracked files:
+	.local.git.out
+	array-dictionary.o
+	avl-dictionary.o
+	avl-dictionary2.o
+	bsearch-dictionary.o
+	data
+	hash-dictionary.o
+	left
+	minihttpd.o
+	right
+	search-engine
+	search-engine.o
+	test-avl
+	test-dict
+	testall
+
+nothing added to commit but untracked files present
+[master 2d4d68b] Commit search engine
+ 1 file changed, 1 insertion(+)
+[master e1e48c7] Commit search engine
+ 1 file changed, 2 insertions(+)
+[master 300a1ec] Commit search engine
+ 1 file changed, 2 insertions(+), 2 deletions(-)
+[master 360f99c] Commit search engine
+ 1 file changed, 1 insertion(+)
+[master 0ee2b0f] Commit search engine
+ 1 file changed, 4 insertions(+), 3 deletions(-)
+[master ffa14e4] Commit search engine
+ 1 file changed, 3 insertions(+), 2 deletions(-)
+[master d146bf1] Commit search engine
+ 1 file changed, 7 insertions(+), 3 deletions(-)
+On branch master
+Untracked files:
+	.local.git.out
+	array-dictionary.o
+	avl-dictionary.o
+	avl-dictionary2.o
+	bsearch-dictionary.o
+	data
+	hash-dictionary.o
+	left
+	minihttpd.o
+	right
+	search-engine
+	search-engine.o
+	test-avl
+	test-dict
+	testall
+	url.txt
+	word.txt
+
+nothing added to commit but untracked files present
+[master 0b9f17a] Commit search engine
+ 1 file changed, 2 insertions(+), 3 deletions(-)
+[master 71c5610] Commit search engine
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+[master 69a0e25] Commit search engine
+ 1 file changed, 1 insertion(+), 2 deletions(-)
+[master 622db84] Commit search engine
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+[master cdf24bb] Commit search engine
+ 1 file changed, 12 insertions(+), 9 deletions(-)
+[master 5eaeba9] Commit search engine
+ 1 file changed, 7 insertions(+), 18 deletions(-)
+[master fc596a8] Commit search engine
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+[master 40f6fc9] Commit search engine
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+[master fb911dc] Commit search engine
+ 1 file changed, 18 insertions(+), 5 deletions(-)
+[master afe4fd9] Commit search engine
+ 1 file changed, 4 insertions(+), 4 deletions(-)
+[master f2aa9a5] Commit search engine
+ 1 file changed, 5 insertions(+), 4 deletions(-)
+[master efee405] Commit search engine
+ 1 file changed, 6 insertions(+), 5 deletions(-)
+[master e905078] Commit search engine
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+[master 2c6120f] Commit search engine
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+[master 740dd76] Commit search engine
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+[master dff0fdf] Commit search engine
+ 1 file changed, 7 insertions(+), 7 deletions(-)
+[master b194512] Commit search engine
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+[master 56825b1] Commit search engine
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+[master 3186f62] Commit search engine
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+[master 97be4ce] Commit search engine
+ 1 file changed, 3 insertions(+), 3 deletions(-)
+[master 21f82ba] Commit search engine
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+[master 1f51d25] Commit search engine
+ 1 file changed, 8 insertions(+), 5 deletions(-)
+[master 812829d] Commit search engine
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+[master d42f88e] Commit search engine
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+[master 28fd38d] Commit search engine
+ 1 file changed, 2 insertions(+), 2 deletions(-)
+[master 15e972c] Commit search engine
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+[master f8a3841] Commit search engine
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+[master d6ce659] Commit search engine
+ 1 file changed, 1 insertion(+)
+[master d85712e] Commit search engine
+ 1 file changed, 3 insertions(+), 3 deletions(-)
+[master c9b9ed1] Commit search engine
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+[master 47b286f] Commit search engine
+ 1 file changed, 6 insertions(+), 5 deletions(-)
+[master e6f3efb] Commit search engine
+ 1 file changed, 2 insertions(+), 2 deletions(-)
+[master a6bc799] Commit search engine
+ 1 file changed, 40 insertions(+), 8 deletions(-)
+[master 411c265] Commit search engine
+ 1 file changed, 2 insertions(+), 1 deletion(-)
+[master 9ed5f0e] Commit search engine
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+[master 27945c8] Commit search engine
+ 1 file changed, 2 insertions(+), 1 deletion(-)
+[master 080d8a7] Commit search engine
+ 1 file changed, 2 insertions(+), 2 deletions(-)
+[master 41e6718] Commit search engine
+ 2 files changed, 8 insertions(+), 2 deletions(-)
+[master c44d2ce] Commit search engine
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+[master ee2d869] Commit search engine
+ 1 file changed, 1 insertion(+)
+[master 90ad4ea] Commit search engine
+ 1 file changed, 4 insertions(+), 4 deletions(-)
+[master 9fbcaf3] Commit search engine
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+[master 3197814] Commit search engine
+ 1 file changed, 5 insertions(+), 1 deletion(-)
+[master 9dc830f] Commit search engine
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+[master 601462b] Commit search engine
+ 1 file changed, 2 insertions(+), 2 deletions(-)
+[master 012b8ae] Commit search engine
+ 1 file changed, 2 insertions(+), 2 deletions(-)
+[master 71f0271] Commit search engine
+ 1 file changed, 2 insertions(+), 2 deletions(-)
+[master c758f0b] Commit search engine
+ 1 file changed, 2 insertions(+), 2 deletions(-)
+[master c86ef11] Commit search engine
+ 1 file changed, 1 insertion(+)
+[master 27a6577] Commit search engine
+ 1 file changed, 4 insertions(+), 3 deletions(-)
+[master 5a75aa4] Commit search engine
+ 1 file changed, 3 insertions(+), 5 deletions(-)
+[master a0bb54a] Commit search engine
+ 1 file changed, 5 insertions(+), 1 deletion(-)
+[master cfeb2a5] Commit search engine
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+[master 53bb581] Commit search engine
+ 1 file changed, 18 insertions(+)
+[master f34cdb1] Commit search engine
+ 1 file changed, 3 insertions(+), 2 deletions(-)
+[master 2190494] Commit search engine
+ 1 file changed, 5 insertions(+), 3 deletions(-)
+[master af8bfbd] Commit search engine
+ 1 file changed, 2 insertions(+), 1 deletion(-)
+[master e2de17d] Commit search engine
+ 1 file changed, 14 insertions(+), 1 deletion(-)
+[master d64d939] Commit search engine
+ 1 file changed, 3 insertions(+)
+[master b140451] Commit search engine
+ 1 file changed, 2 insertions(+), 2 deletions(-)
+[master e607ea5] Commit search engine
+ 1 file changed, 19 insertions(+), 17 deletions(-)
+[master f6d7d02] Commit search engine
+ 1 file changed, 1 insertion(+)
+[master d6dc368] Commit search engine
+ 1 file changed, 9 insertions(+), 1 deletion(-)
+[master 866b752] Commit search engine
+ 1 file changed, 7 deletions(-)
+[master 9b3d6b7] Commit search engine
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+[master 8027e5c] Commit search engine
+ 1 file changed, 2 insertions(+), 2 deletions(-)
+[master 21ec170] Commit search engine
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+[master 394b5a5] Commit search engine
+ 1 file changed, 8 insertions(+), 1 deletion(-)
+[master 9556ff5] Commit search engine
+ 1 file changed, 17 insertions(+), 8 deletions(-)
+[master c2c2e85] Commit search engine
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+[master 7191121] Commit search engine
+ 1 file changed, 6 insertions(+), 1 deletion(-)
+[master e719dd7] Commit search engine
+ 1 file changed, 2 insertions(+), 3 deletions(-)
+[master b6a9a59] Commit search engine
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+[master bcf0347] Commit search engine
+ 1 file changed, 2 insertions(+), 1 deletion(-)
+[master 8d4f0b1] Commit search engine
+ 1 file changed, 38 insertions(+), 3 deletions(-)
+[master 8d73199] Commit search engine
+ 1 file changed, 5 insertions(+), 5 deletions(-)
+[master fb48cc3] Commit search engine
+ 1 file changed, 5 insertions(+), 5 deletions(-)
+[master 4bc507b] Commit search engine
+ 1 file changed, 2 insertions(+), 2 deletions(-)
+On branch master
+Untracked files:
+	.local.git.out
+	array-dictionary.o
+	avl-dictionary.o
+	avl-dictionary2.o
+	bsearch-dictionary.o
+	data
+	hash-dictionary.o
+	left
+	minihttpd.o
+	right
+	search-engine
+	search-engine.o
+	test-avl
+	test-dict
+	testall
+	url.txt
+	word.txt
+
+nothing added to commit but untracked files present
+[master 50cc666] Commit search engine
+ 1 file changed, 4 insertions(+), 4 deletions(-)
+[master 4440275] Commit search engine
+ 1 file changed, 2 insertions(+), 2 deletions(-)
+On branch master
+Untracked files:
+	.local.git.out
+	array-dictionary.o
+	avl-dictionary.o
+	avl-dictionary2.o
+	bsearch-dictionary.o
+	data
+	hash-dictionary.o
+	left
+	minihttpd.o
+	right
+	search-engine
+	search-engine.o
+	test-avl
+	test-dict
+	testall
+	url.txt
+	word.txt
+
+nothing added to commit but untracked files present
+[master 1a93aa4] Commit search engine
+ 1 file changed, 2 insertions(+), 2 deletions(-)
+[master 299ebab] Commit search engine
+ 1 file changed, 2 insertions(+), 3 deletions(-)
+[master e157e20] Commit search engine
+ 1 file changed, 2 insertions(+), 2 deletions(-)
+[master e467209] Commit search engine
+ 1 file changed, 8 insertions(+), 4 deletions(-)
+[master f2d94f6] Commit search engine
+ 1 file changed, 2 insertions(+), 2 deletions(-)
+[master ae7b24d] Commit search engine
+ 1 file changed, 10 deletions(-)
+[master e2f925e] Commit search engine
+ 1 file changed, 6 insertions(+), 4 deletions(-)
+[master 67fbaf7] Commit search engine
+ 1 file changed, 7 insertions(+), 3 deletions(-)
+[master 98f802e] Commit search engine
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+[master b516a1b] Commit search engine
+ 1 file changed, 11 insertions(+), 13 deletions(-)
+[master e74a3ed] Commit search engine
+ 1 file changed, 9 insertions(+), 6 deletions(-)
+[master 9313756] Commit search engine
+ 1 file changed, 3 insertions(+), 1 deletion(-)
+[master 5b010a9] Commit search engine
+ 1 file changed, 11 insertions(+), 9 deletions(-)
+[master 3fd3895] Commit search engine
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+[master 7eb10e3] Commit search engine
+ 1 file changed, 3 insertions(+), 2 deletions(-)
+[master f8905ec] Commit search engine
+ 1 file changed, 3 insertions(+), 2 deletions(-)
+[master 50286d8] Commit search engine
+ 1 file changed, 6 insertions(+), 6 deletions(-)
+[master 69b12fd] Commit search engine
+ 1 file changed, 3 insertions(+), 3 deletions(-)
+[master 8c0e36b] Commit search engine
+ 1 file changed, 155 insertions(+), 155 deletions(-)
+[master 17f88e9] Commit search engine
+ 1 file changed, 2 insertions(+), 2 deletions(-)
+[master dacdcec] Commit search engine
+ 1 file changed, 2 insertions(+), 2 deletions(-)
+[master 292442a] Commit search engine
+ 1 file changed, 30 insertions(+), 30 deletions(-)
+[master f6a251e] Commit search engine
+ 1 file changed, 142 insertions(+), 142 deletions(-)
+[master 7d29afb] Commit search engine
+ 1 file changed, 3 insertions(+), 3 deletions(-)
+[master 625be9e] Commit search engine
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+[master 30104be] Commit search engine
+ 1 file changed, 5 insertions(+), 5 deletions(-)
+On branch master
+Untracked files:
+	.local.git.out
+	array-dictionary.o
+	avl-dictionary.o
+	avl-dictionary2.o
+	bsearch-dictionary.o
+	data
+	hash-dictionary.o
+	left
+	minihttpd.o
+	right
+	search-engine
+	search-engine.o
+	test-avl
+	test-dict
+	testall
+	url.txt
+	word.txt
+
+nothing added to commit but untracked files present
+On branch master
+Untracked files:
+	.local.git.out
+	array-dictionary.o
+	avl-dictionary.o
+	avl-dictionary2.o
+	bsearch-dictionary.o
+	data
+	hash-dictionary.o
+	left
+	minihttpd.o
+	right
+	search-engine
+	search-engine.o
+	test-avl
+	test-dict
+	testall
+	url.txt
+	word.txt
+
+nothing added to commit but untracked files present
+[master 7ba3722] Commit search engine
+ 1 file changed, 3 insertions(+), 1 deletion(-)
+[master e295f2a] Commit search engine
+ 1 file changed, 18 insertions(+), 7 deletions(-)
+On branch master
+Untracked files:
+	.local.git.out
+	array-dictionary.o
+	avl-dictionary.o
+	avl-dictionary2.o
+	bsearch-dictionary.o
+	data
+	hash-dictionary.o
+	left
+	minihttpd.o
+	right
+	search-engine
+	search-engine.o
+	test-avl
+	test-dict
+	testall
+	url.txt
+	word.txt
+
+nothing added to commit but untracked files present
+[master 4b4dff8] Commit search engine
+ 1 file changed, 39 insertions(+), 60 deletions(-)
+[master 4e14ba1] Commit search engine
+ 1 file changed, 66 insertions(+), 57 deletions(-)
+[master 6b6b2f8] Commit search engine
+ 1 file changed, 17 insertions(+)
+[master dd4b554] Commit search engine
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+[master b44c7d9] Commit search engine
+ 1 file changed, 2 insertions(+), 2 deletions(-)
+[master f49168a] Commit search engine
+ 1 file changed, 2 insertions(+), 1 deletion(-)
+[master df60cbc] Commit search engine
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+[master 7bf6742] Commit search engine
+ 1 file changed, 2 insertions(+), 2 deletions(-)
+[master 4216171] Commit search engine
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+[master 77ff4e0] Commit search engine
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+[master e57afca] Commit search engine
+ 1 file changed, 2 insertions(+), 2 deletions(-)
+[master 6932dc1] Commit search engine
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+[master 07f43f9] Commit search engine
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+[master 888fdcb] Commit search engine
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+[master d5dd706] Commit search engine
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+[master c091e06] Commit search engine
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+[master 9020f11] Commit search engine
+ 1 file changed, 5 insertions(+), 2 deletions(-)
+[master a26f569] Commit search engine
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+[master c5063e6] Commit search engine
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+[master 5143f51] Commit search engine
+ 1 file changed, 9 insertions(+)
+[master 96a8134] Commit search engine
+ 1 file changed, 8 insertions(+)
+On branch master
+Untracked files:
+	.local.git.out
+	array-dictionary.o
+	avl-dictionary.o
+	avl-dictionary2.o
+	bsearch-dictionary.o
+	data
+	hash-dictionary.o
+	left
+	minihttpd.o
+	right
+	search-engine
+	search-engine.o
+	test-avl
+	test-dict
+	testall
+	url.txt
+	word.txt
+
+nothing added to commit but untracked files present
+On branch master
+Untracked files:
+	.local.git.out
+	array-dictionary.o
+	avl-dictionary.o
+	avl-dictionary2.o
+	bsearch-dictionary.o
+	data
+	hash-dictionary.o
+	left
+	minihttpd.o
+	right
+	search-engine
+	search-engine.o
+	test-avl
+	test-dict
+	testall
+	url.txt
+	word.txt
+
+nothing added to commit but untracked files present
+[master b061ea5] Commit search engine
+ 1 file changed, 6 insertions(+)
+[master 3b6c5e5] Commit search engine
+ 1 file changed, 19 insertions(+)
+[master a5b763b] Commit search engine
+ 2 files changed, 11 insertions(+), 1 deletion(-)
+[master 41808b8] Commit search engine
+ 1 file changed, 14 insertions(+)
+[master b5c30ee] Commit search engine
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+[master 6f3e727] Commit search engine
+ 2 files changed, 15 insertions(+), 16 deletions(-)
+[master 303ef20] Commit search engine
+ 1 file changed, 9 insertions(+), 1 deletion(-)
+[master 2d79ddd] Commit search engine
+ 1 file changed, 17 insertions(+), 1 deletion(-)
+[master caa8f1e] Commit search engine
+ 1 file changed, 20 insertions(+)
+[master 1907b1f] Commit search engine
+ 1 file changed, 3 insertions(+), 2 deletions(-)
+[master 7295a4e] Commit search engine
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+[master d773243] Commit search engine
+ 1 file changed, 46 insertions(+)
+[master 6376538] Commit search engine
+ 1 file changed, 14 insertions(+)
+[master 028e899] Commit search engine
+ 1 file changed, 21 insertions(+), 4 deletions(-)
+[master f37fb02] Commit search engine
+ 1 file changed, 11 insertions(+), 8 deletions(-)
+[master 614d016] Commit search engine
+ 1 file changed, 13 insertions(+)
+[master 2eb85a4] Commit search engine
+ 1 file changed, 21 insertions(+), 21 deletions(-)
+[master 156b992] Commit search engine
+ 2 files changed, 2 insertions(+), 1 deletion(-)
+[master 6053320] Commit search engine
+ 2 files changed, 3 insertions(+), 2 deletions(-)
+[master 2a7b671] Commit search engine
+ 2 files changed, 10 insertions(+)
+[master a19b30f] Commit search engine
+ 2 files changed, 17 insertions(+)
+[master 8703e3a] Commit search engine
+ 2 files changed, 3 insertions(+), 2 deletions(-)
+[master a2f44ad] Commit search engine
+ 2 files changed, 4 insertions(+), 2 deletions(-)
+[master e06c76f] Commit search engine
+ 2 files changed, 3 insertions(+), 1 deletion(-)
+[master b352109] Commit search engine
+ 2 files changed, 2 insertions(+), 5 deletions(-)
+[master 23d9981] Commit search engine
+ 2 files changed, 3 insertions(+)
+[master 774c47a] Commit search engine
+ 2 files changed, 2 insertions(+), 1 deletion(-)
+[master bf81bd1] Commit search engine
+ 2 files changed, 3 insertions(+), 3 deletions(-)
+[master 9ef4e9a] Commit search engine
+ 2 files changed, 9 insertions(+), 8 deletions(-)
+[master 5d3c6ec] Commit search engine
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+[master 582a1d0] Commit search engine
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+[master 82eb43c] Commit search engine
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+On branch master
+Untracked files:
+	.local.git.out
+	array-dictionary.o
+	avl-dictionary.o
+	avl-dictionary2.o
+	bsearch-dictionary.o
+	data
+	hash-dictionary.o
+	left
+	minihttpd.o
+	right
+	search-engine
+	search-engine.o
+	test-avl
+	test-dict
+	testall
+	url.txt
+	word.txt
+
+nothing added to commit but untracked files present
+On branch master
+Untracked files:
+	.local.git.out
+	array-dictionary.o
+	avl-dictionary.o
+	avl-dictionary2.o
+	bsearch-dictionary.o
+	data
+	hash-dictionary.o
+	left
+	minihttpd.o
+	right
+	search-engine
+	search-engine.o
+	test-avl
+	test-dict
+	testall
+	url.txt
+	word.txt
+
+nothing added to commit but untracked files present
+[master 6b662c7] Commit search engine
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+[master 7d2af49] Commit search engine
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+[master 25945dc] Commit search engine
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+[master c8b34e0] Commit search engine
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+[master fadac96] Commit search engine
+ 1 file changed, 2 insertions(+), 1 deletion(-)
+On branch master
+Untracked files:
+	.local.git.out
+	array-dictionary.o
+	avl-dictionary.o
+	avl-dictionary2.o
+	bsearch-dictionary.o
+	data
+	hash-dictionary.o
+	left
+	minihttpd.o
+	right
+	search-engine
+	search-engine.o
+	test-avl
+	test-dict
+	testall
+	url.txt
+	word.txt
+
+nothing added to commit but untracked files present
+[master 5f9b123] Commit search engine
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+[master 5bdd422] Commit search engine
+ 1 file changed, 2 insertions(+), 2 deletions(-)
+[master 3d4e0cf] Commit search engine
+ 1 file changed, 1 deletion(-)
+[master e77d391] Commit search engine
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+[master 62106cd] Commit search engine
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+[master 1d38a68] Commit search engine
+ 1 file changed, 3 insertions(+), 3 deletions(-)
+[master 8b7bca8] Commit search engine
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+[master c0468e0] Commit search engine
+ 1 file changed, 3 insertions(+), 3 deletions(-)
+[master 768d7bd] Commit search engine
+ 1 file changed, 2 insertions(+), 1 deletion(-)
+[master fa10759] Commit search engine
+ 1 file changed, 2 insertions(+), 2 deletions(-)
+[master ea24a3c] Commit search engine
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+[master 1377ae2] Commit search engine
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+[master 36a1c2e] Commit search engine
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+[master a4fef25] Commit search engine
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+[master 5682663] Commit search engine
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+[master 968f4d8] Commit search engine
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+[master 322256c] Commit search engine
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+[master 92e8e33] Commit search engine
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+[master c02a1e5] Commit search engine
+ 1 file changed, 2 insertions(+)
+[master 949787d] Commit search engine
+ 1 file changed, 4 insertions(+), 2 deletions(-)
+[master c804b66] Commit search engine
+ 1 file changed, 2 insertions(+), 2 deletions(-)
+[master 1d2c54a] Commit search engine
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+[master 39c9b04] Commit search engine
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+[master ae58516] Commit search engine
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+[master f6be9c2] Commit search engine
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+[master 185d646] Commit search engine
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+[master 4f69043] Commit search engine
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+[master b6a2942] Commit search engine
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+[master 2395977] Commit search engine
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+[master 0e877f9] Commit search engine
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+[master 225b617] Commit search engine
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+[master 17ada2c] Commit search engine
+ 1 file changed, 2 insertions(+), 2 deletions(-)
+[master 65264f9] Commit search engine
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+[master 3eb6810] Commit search engine
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+[master 3e77265] Commit search engine
+ 1 file changed, 2 insertions(+), 2 deletions(-)
+[master 83ad0d1] Commit search engine
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+[master 0f51678] Commit search engine
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+[master 5bd7bfd] Commit search engine
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+[master 56a10f9] Commit search engine
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+[master 947274d] Commit search engine
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+[master 4ea5d70] Commit search engine
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+[master 5abc58b] Commit search engine
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+[master 3c0e125] Commit search engine
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+[master 7f19fcc] Commit search engine
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+On branch master
+Untracked files:
+	.local.git.out
+	array-dictionary.o
+	avl-dictionary.o
+	avl-dictionary2.o
+	bsearch-dictionary.o
+	data
+	hash-dictionary.o
+	left
+	minihttpd.o
+	right
+	search-engine
+	search-engine.o
+	test-avl
+	test-dict
+	testall
+	url.txt
+	word.txt
+
+nothing added to commit but untracked files present
+[master fe2e336] Commit search engine
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+[master 354e264] Commit search engine
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+[master 3667430] Commit search engine
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+[master 07c941e] Commit search engine
+ 1 file changed, 2 insertions(+), 2 deletions(-)
+[master 912bd8d] Commit search engine
+ 1 file changed, 4 insertions(+), 4 deletions(-)
+[master 965c7c1] Commit search engine
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+[master 7eb1172] Commit search engine
+ 1 file changed, 2 insertions(+), 2 deletions(-)
+On branch master
+Untracked files:
+	.local.git.out
+	array-dictionary.o
+	avl-dictionary.o
+	avl-dictionary2.o
+	bsearch-dictionary.o
+	data
+	hash-dictionary.o
+	left
+	minihttpd.o
+	right
+	search-engine
+	search-engine.o
+	test-avl
+	test-dict
+	testall
+	url.txt
+	word.txt
+
+nothing added to commit but untracked files present
